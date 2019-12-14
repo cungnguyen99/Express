@@ -10,6 +10,12 @@ const port = 3000
 
  * app.get('/users', (req, res) => res.send('List users: '))
  */
+
+ var users=[
+    {id: 1, name: 'Selena Gomez'},
+    {id: 2, name: 'Anne Kedrick'}
+ ]
+
 //Khi muốn load cả 1 trang ta phải làm như này
 app.set('view engine', 'pug');
 
@@ -19,9 +25,27 @@ app.set('views', './views');
 app.get('/', (req, res) => res.render('index.pug',{name: 'Cung'}))
 
 app.get('/users', (req, res) => res.render('users/index.pug',{
-    userList:[
-    {id: 1, name: 'Selena Gomez'},
-    {id: 2, name: 'Anne Kedrick'}
-]}))
+
+    userList:users
+
+}))
+
+app.get('/users/search',function(req, res){
+
+    //lay ra value co key la name trong users. req.querry tra ve mot obj 
+    var val=req.query.q;
+
+    //loc ra nhung ten trung voi q
+    var matchedArr=users.filter(function(user){
+
+        return user.name.toLowerCase().indexOf(val.toLowerCase()) !== -1;
+
+    })
+
+    res.render('users/index.pug',{
+        userList:matchedArr
+    })
+    
+})
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

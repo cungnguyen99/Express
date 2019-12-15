@@ -16,6 +16,7 @@ const port = 3000
     {id: 2, name: 'Anne Kedrick'}
  ]
 
+
 //Khi muốn load cả 1 trang ta phải làm như này
 app.set('view engine', 'pug');
 
@@ -32,6 +33,20 @@ app.get('/users', (req, res) => res.render('users/index.pug',{
 
 app.get('/users/search',function(req, res){
 
+    var dataStorage='usersData';
+
+    var data=sessionStorage.getItem(dataStorage);
+
+    if(data){
+
+        usersData=JSON.parse(data);
+
+    }else{
+
+        usersData=[];
+
+    }
+
     //lay ra value co key la name trong users. req.querry tra ve mot obj. req.query chấm đến tên gì cũng được 
     //nhưng phải giống với tên của thuộc tính name trong input ở file pug
     var val=req.query.nameQuery;
@@ -47,6 +62,11 @@ app.get('/users/search',function(req, res){
         userList:matchedArr
     })
     
+})
+
+var input=document.getElementById('itemName');
+input.addEventListener('change',function(){
+    alert('hello');
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

@@ -3,7 +3,7 @@ h1 List users
 form(action="/users/search", method='GET')
   //Với mỗi thẻ input, thuộc tính name sẽ tương ứng với key trong obj
   label(for="") Name
-  input(type="text", name="nameQuery")
+  input(type="text", name="nameQuery" id="itemName")
   br
   label(for='') Age
   input(type="text", name="ageQuery")

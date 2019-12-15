@@ -2,7 +2,7 @@ h1 List users
 //Thuộc tính action quy định đường dẫn mà dữ liệu của form sẽ được gửi đến
 form(action="/users/search", method='GET')
   //Với mỗi thẻ input, thuộc tính name sẽ tương ứng với key trong obj
-  input(type="text", name="q")
+  input(type="text", name="nameQuery")
   button Search
 ul
   each val, index in userList

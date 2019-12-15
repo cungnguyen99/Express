@@ -32,8 +32,9 @@ app.get('/users', (req, res) => res.render('users/index.pug',{
 
 app.get('/users/search',function(req, res){
 
-    //lay ra value co key la name trong users. req.querry tra ve mot obj 
-    var val=req.query.q;
+    //lay ra value co key la name trong users. req.querry tra ve mot obj. req.query chấm đến tên gì cũng được 
+    //nhưng phải giống với tên của thuộc tính name trong input ở file pug
+    var val=req.query.nameQuery;
 
     //loc ra nhung ten trung voi q
     var matchedArr=users.filter(function(user){

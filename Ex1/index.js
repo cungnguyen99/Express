@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser=require('body-parser')
 const app = express()
 const port = 3000
 
@@ -22,6 +23,11 @@ app.set('view engine', 'pug');
 
 app.set('views', './views');
 
+//khai bao de su dung req.body o bai 4
+app.use(bodyParser.json())
+
+app.use(bodyParser.urlencoded({ extended: true }))
+
 //Truyền vào 2 biến 1 là tên file pug 2 là 1 obj, khi muốn lấy gtri của key, bên file pug ta sẽ ghi #{name}
 app.get('/', (req, res) => res.render('index.pug',{name: 'Cung'}))
 
@@ -31,26 +37,14 @@ app.get('/users', (req, res) => res.render('users/index.pug',{
 
 }))
 
-app.get('/users/search',function(req, res){
-
-    var dataStorage='usersData';
-
-    var data=sessionStorage.getItem(dataStorage);
-
-    if(data){
-
-        usersData=JSON.parse(data);
-
-    }else{
-
-        usersData=[];
-
-    }
+app.get('/users/search',function(req, res){ 
 
     //lay ra value co key la name trong users. req.querry tra ve mot obj. req.query chấm đến tên gì cũng được 
     //nhưng phải giống với tên của thuộc tính name trong input ở file pug
     var val=req.query.nameQuery;
+
     var age=req.query.ageQuery;
+
     //loc ra nhung ten trung voi q
     var matchedArr=users.filter(function(user){
 
@@ -64,9 +58,21 @@ app.get('/users/search',function(req, res){
     
 })
 
-var input=document.getElementById('itemName');
-input.addEventListener('change',function(){
-    alert('hello');
+app.get('/users/create',function(rep,res){
+
+    res.render('users/create.pug');
+
+})
+
+app.post('/users/create',function(req,res){
+
+    //tra ve gia tri ma ta gui len server khi ta nhap o input theo kieu obj voi key la ten 
+    //cua thuoc tinh name o input va value la gia tri cua input
+    users.push(req.body);
+
+    //sau khi gui xong dua nguoi dung quay tro ve trang users sẽ hiện ra tất cả users kể cả user vừa tạo do
+    //khi quay trở về trang users nó sẽ thực hiện lại hàm get ở dòng 34 rồi render lại
+    res.redirect('/users');
 })
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

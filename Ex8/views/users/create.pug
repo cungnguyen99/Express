@@ -1,5 +1,7 @@
-h1 Create users
-form(action="/users/create", method="POST")
-    lable Name
-    input(name="name", type="text" )
-    button Craete
+extends ../layout/common 
+block content
+    h1 Create users
+    form(action="/users/create", method="POST")
+        lable Name
+        input(name="name", type="text" )
+        button Craete

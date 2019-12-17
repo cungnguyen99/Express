@@ -1,7 +1,6 @@
 extends ../layout/common 
 block content
   h1 List users
-  a(href="users/create") New users
   //Thuộc tính action quy định đường dẫn mà dữ liệu của form sẽ được gửi đến
   form(action="/users/search", method='GET', class="d-flex")
     //Với mỗi thẻ input, thuộc tính name sẽ tương ứng với key trong obj
@@ -13,8 +12,12 @@ block content
     button(class="btn btn-success") Search
   ul
     each val, index in userList
-      li= val.name
-        span &nbsp;
+      .card(style='width: 18rem;  height=50rem')
+        img.card-img-top(src="images/"+val.url, alt='Card image cap')
+        .card-body
+          h5.card-title=val.name
+          p.card-text Some quick example text to build on the card title and make up the
+          a.btn.btn-primary(href='#') Go somewhere
         a(href="/users/"+val.id) View
 
   script

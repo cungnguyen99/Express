@@ -8,6 +8,9 @@ const FileSync = require('lowdb/adapters/FileSync')
 const adapter = new FileSync('db.json')
 const db = low(adapter)
 
+//Khai bao tao id ngau nhien cho user
+const shortid=require('shortid')
+
 
 /**
  * Khi muốn lấy về một dòng html thì ta viết như ở dưới nhưng trên thực tế nó sẽ trả về cả 1 trang html nên không
@@ -79,17 +82,20 @@ app.get('/users/create',function(rep,res){
 app.get('/users/:userId', function(req, res){
     
     //:userId la mot parameter. phan do khi nhan vao no se thay bang id o trong find find({id: idSearch})
+    //id dang int thì phải đưa về dạng int vì req.params.userId là string nên phải parseInt(req.params.userId);
     var idSearch=req.params.userId;
 
     var user=db.get('users').find({id: idSearch}).value();
 
-    console.log(user);
     res.render('users/view',{
-        userInfor: user       
+        userInfo: user       
     });
 })
 
 app.post('/users/create',function(req,res){
+
+    //tao id ngau nhien
+    req.body.id=shortid.generate();
 
     //tra ve gia tri ma ta gui len server khi ta nhap o input theo kieu obj voi key la ten 
     //cua thuoc tinh name o input va value la gia tri cua input

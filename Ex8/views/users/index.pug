@@ -1,8 +1,8 @@
 extends ../layout/common 
 block content
-  h1 List users
+  h1.text-center.m-4 List users
   //Thuộc tính action quy định đường dẫn mà dữ liệu của form sẽ được gửi đến
-  form(action="/users/search", method='GET', class="d-flex")
+  form(action="/users/search", method='GET', class="d-flex justify-content-center m-5")
     //Với mỗi thẻ input, thuộc tính name sẽ tương ứng với key trong obj
     label(for="") Name
     input(type="text", name="nameQuery", id="itemName", class="mx-3")
@@ -10,15 +10,16 @@ block content
     label(for='') Age
     input(type="text", name="ageQuery", class="mx-3")
     button(class="btn btn-success") Search
-  ul
-    each val, index in userList
-      .card(style='width: 18rem;  height=50rem')
-        img.card-img-top(src="images/"+val.url, alt='Card image cap')
-        .card-body
-          h5.card-title=val.name
-          p.card-text Some quick example text to build on the card title and make up the
-          a.btn.btn-primary(href='#') Go somewhere
-        a(href="/users/"+val.id) View
+  .container
+    .row
+      each val, index in userList
+        .col.my-3
+          .card(style='width: 18rem;  height=50rem; box-sizing: border-box;')
+            img.card-img-top(src="images/"+val.url, alt='Card image cap')
+            .card-body
+              h5.card-title=val.name
+              p.card-text Some quick example text to build on the card title and make up the
+              a.btn.btn-primary(href='/users/'+val.id) View
 
   script
     include index.js

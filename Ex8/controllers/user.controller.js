@@ -45,34 +45,7 @@ module.exports.get= function(req, res){
 
 module.exports.postCreate=function(req,res){
 
-    var err=[];
-
     req.body.id=shortid.generate();
-
-    if(!req.body.name){
-
-        err.push('Name is no required')
-
-    }
-
-    if(!req.body.url){
-
-        err.push('Url image is no required')
-        
-    }
-
-    if(err.length){
-
-        res.render('users/create.pug',{
-
-            error:err,
-            
-            values: req.body
-
-        })
-
-        return;
-    }
 
     db.get('users').push(req.body).write();
 

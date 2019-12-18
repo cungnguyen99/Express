@@ -1,7 +1,12 @@
 extends ../layout/common 
 block content
-    h1 View users
+    .container
 
-    p 
-        b Name
-        span= userInfo.name
+        h1.my-4 View users
+
+        .d-flex.flex-row
+            img(src="/images/"+userInfo.url, alt="", class="img-fluid", width="40%")
+            lable.mx-4 Name:
+            b 
+                em
+                    span= userInfo.name

@@ -1,7 +1,14 @@
 extends ../layout/common 
 block content
-    h1 Create users
-    form(action="/users/create", method="POST")
-        lable Name
-        input(name="name", type="text" )
-        button Craete
+    .container
+        h1 Create users
+        if error
+            each e in error
+                .alert.alert-danger=e
+        form(action="/users/create", method="POST")
+            .form-group
+                lable(for="name") Name
+                input#name.form-control(name="name", type="text",class="my-3", value=values?values.name:"")
+                lable(for="url") Url Image
+                input#url.form-control(name="url", type="text",class="my-3", value=values?values.url:"")
+                button.btn.btn-primary Craete

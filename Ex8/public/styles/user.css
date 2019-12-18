@@ -7,3 +7,25 @@ label{
     height: 50px;
     margin: 5px;
 }
+
+.content-down{
+    background-image: url('./img/home_webdesign_pattern2.png');
+    background-repeat: repeat;
+    background-color: #3a3a3a;
+    height: 15vh;
+}
+.content-down .footer_copy {
+    border-top: 1px solid rgba(255,255,255,.1);
+}
+.social-menu li{
+    text-decoration: none;
+    list-style: none;
+    display: inline-block;
+    font-size: 70%;
+    margin-right: 6px;
+    padding-right: 6px;
+    border-right: 1px solid rgba(255,255,255,.1);
+}
+.social-menu li a{
+    color: #65666c;
+}

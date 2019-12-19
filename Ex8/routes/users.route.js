@@ -4,6 +4,8 @@ var router = express.Router();
 
 var controller=require('../controllers/user.controller');
 
+var middleware=require('../middleware/auth.middleware')
+
 var vali=require('../validate/user.validate')
 
 router.get('/', controller.index)
@@ -12,8 +14,10 @@ router.get('/search', controller.search)
 
 router.get('/create', controller.create)
 
-router.get('/:userId', controller.get)
+//truoc khi xem view user thi phai bat nguoi dung dang nhap
+router.get('/:userId',middleware.requireAuth, controller.get)
 
-router.post('/create', vali.validate, controller.postCreate)
+//truoc khi tao user moi cung bat nguoi dung dang nhap
+router.post('/create',middleware.requireAuth, vali.validate, controller.postCreate)
 
 module.exports=router

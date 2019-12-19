@@ -8,7 +8,7 @@ html
     body 
         nav.navbar.navbar-expand-lg.navbar-light.bg-light
             img(src="/images/pexels-photo-776373.jpeg", class="img-home" alt="")
-            a.navbar-brand(href='/users') Navbar
+            a.navbar-brand(href='/users') List users
             button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
                 span.navbar-toggler-icon
             #navbarSupportedContent.collapse.navbar-collapse
@@ -26,16 +26,17 @@ html
 
         block content
 
-        footer
-            .container-fluid.p-0
-                .content-down
-                    .social.container.py-4
-                        .row.d-flex.justify-content-between.flex-row
-                            h2(style='font-weight: 400; color: #fff') Watermelon
+        #container
+            footer
+                .container-fluid.p-0
+                    .content-down
+                        .social.container.py-2
+                            .row.d-flex.justify-content-between.flex-row
+                                h3(style='font-weight: 400; color: #fff') W@termelon
                                 .logo
-                                    i.fab.fa-facebook-square.m-3(style='color: #3b5998')
-                                    i.fab.fa-instagram.m-3(style='color: #E1306C;')
-                                    i.fab.fa-twitter.m-3(style='color: #00acee')
-                                    i.fab.fa-youtube.m-3(style='color: #c4302b')
+                                    i.fab.fa-facebook-square.mx-3(style='color: #3b5998')
+                                    i.fab.fa-instagram.mx-3(style='color: #E1306C;')
+                                    i.fab.fa-twitter.mx-3(style='color: #00acee')
+                                    i.fab.fa-youtube.mx-3(style='color: #c4302b')
 
             block footer

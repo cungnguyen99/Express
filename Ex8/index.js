@@ -13,6 +13,8 @@ app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
+app.use(cookieParser())
+
 app.use(express.static('public'))
 
 app.get('/', (req, res) => res.render('index.pug',{name: 'Cung'}))

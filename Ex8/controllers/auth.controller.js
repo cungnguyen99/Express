@@ -1,5 +1,7 @@
 var db=require('../db.js')
 
+var md5=require('md5')
+
 module.exports.login=function(req, res){ 
 
     res.render('auth/authLogin')
@@ -31,7 +33,7 @@ module.exports.postLogin=function(req,res){
 
     }
 
-    if(user.passWord!==pass){
+    if(user.passWord!==md5(pass)){
 
         res.render('auth/authLogin',{
 

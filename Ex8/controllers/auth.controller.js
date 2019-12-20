@@ -17,8 +17,6 @@ module.exports.postLogin=function(req,res){
 
     var user=db.get('users').find({email: email}).value();
 
-    console.log(req.body)
-
     if(!user){
 
         res.render('auth/authLogin',{
@@ -47,7 +45,9 @@ module.exports.postLogin=function(req,res){
 
     }
 
-    res.cookie('idUser', user.id)
+    res.cookie('idUser', user.id, {
+        signed: true
+    })
 
     res.redirect('/users')
 }

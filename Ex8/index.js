@@ -1,3 +1,5 @@
+require('dotenv').config();
+console.log(process.env.MyDarling)
 const express = require('express')
 const bodyParser=require('body-parser')
 const cookieParser=require('cookie-parser')
@@ -14,7 +16,7 @@ app.use(bodyParser.json())
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
-app.use(cookieParser('qwertyyuuitufhj'))
+app.use(cookieParser(process.env.MyDarling))
 
 app.use(express.static('public'))
 

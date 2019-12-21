@@ -13,7 +13,9 @@ module.exports.index=function(req, res){
 
     res.render('product/index.pug',{
 
-        userList:db.get('product').value().slice(start,end)
+        userList:db.get('product').value().slice(start,end),
+        
+        products: db.get('product').value()
 
     })
 }

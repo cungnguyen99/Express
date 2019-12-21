@@ -7,6 +7,7 @@ const app = express()
 const port = 3000
 var userRoute=require('./routes/users.route')
 var authRoute=require('./routes/auth.route')
+var productRoute=require('./routes/product.route')
 
 app.set('view engine', 'pug');
 
@@ -25,5 +26,7 @@ app.get('/', (req, res) => res.render('index.pug',{name: 'Cung'}))
 app.use('/users', userRoute);
 
 app.use('/auth', authRoute);
+
+app.use('/product', productRoute);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

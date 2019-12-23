@@ -17,7 +17,7 @@ module.exports.index=function(req, res){
 
         userList:db.get('product').value().slice(start,end),
         
-        products: db.get('product').value()
+        products: pageArr,
 
     })
 }

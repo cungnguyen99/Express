@@ -13,17 +13,14 @@ block content
               a.btn.btn-primary(href='/product/'+val.id) View
     nav(aria-label='Page navigation example')
         ul.pagination
-            li.page-item
-            a.page-link(href='#', aria-label='Previous')
+          li.page-item
+            a.page-link(href='/product?page=', id="pre" aria-label='Previous')
                 span(aria-hidden='true') &laquo;
                 span.sr-only Previous
+          each val in products
             li.page-item
-            a.page-link(href='#') 1
-            li.page-item
-            a.page-link(href='#') 2
-            li.page-item
-            a.page-link(href='#') 3
-            li.page-item
-            a.page-link(href='#', aria-label='Next')
+            a.page-link(href='/product?page='+val)=val
+          li.page-item
+            a.page-link(href='/product?page=', aria-label='Next')
                 span(aria-hidden='true') &raquo;
                 span.sr-only Next

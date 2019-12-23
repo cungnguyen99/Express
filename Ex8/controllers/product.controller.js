@@ -11,6 +11,8 @@ module.exports.index=function(req, res){
 
     var end=page*perPage
 
+    var pageArr=([page,page+1, page+2])||[1,2,3]
+
     res.render('product/index.pug',{
 
         userList:db.get('product').value().slice(start,end),

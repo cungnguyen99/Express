@@ -14,13 +14,13 @@ block content
     nav(aria-label='Page navigation example')
         ul.pagination
           li.page-item
-            a.page-link(href='/product?page=', id="pre" aria-label='Previous')
+            a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
                 span(aria-hidden='true') &laquo;
                 span.sr-only Previous
           each val in products
             li.page-item
             a.page-link(href='/product?page='+val)=val
           li.page-item
-            a.page-link(href='/product?page=', aria-label='Next')
+            a.page-link(href='/product?page='+(page+1), aria-label='Next')
                 span(aria-hidden='true') &raquo;
                 span.sr-only Next

@@ -19,5 +19,11 @@ module.exports.index=function(req, res){
         
         products: pageArr,
 
+        page: page
+
+    })
+
+    res.render('/product/:page',{
+        
     })
 }

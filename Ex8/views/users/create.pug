@@ -5,10 +5,12 @@ block content
         if error
             each e in error
                 .alert.alert-danger=e
-        form(action="/users/create", method="POST")
+        form(action="/users/create", method="POST", enctype="multipart/form-data")
             .form-group
                 lable(for="name") Name
                 input#name.form-control(name="name", type="text",class="my-3", value=values?values.name:"")
                 lable(for="url") Url Image
                 input#url.form-control(name="url", type="text",class="my-3", value=values?values.url:"")
+                lable(for="avatar") Avatar
+                input#avatar.form-control-file(name="avatar", type="file",class="my-3")
                 button.btn.btn-primary Craete

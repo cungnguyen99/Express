@@ -1,6 +1,10 @@
 var express = require('express')
 
+var multer  = require('multer')
+
 var router = express.Router(); 
+
+var upload = multer({ dest: './public/uploads/' })
 
 var controller=require('../controllers/user.controller');
 
@@ -18,6 +22,10 @@ router.get('/create', controller.create)
 router.get('/:userId',middleware.requireAuth, controller.get)
 
 //truoc khi tao user moi cung bat nguoi dung dang nhap
-router.post('/create',middleware.requireAuth, vali.validate, controller.postCreate)
+router.post('/create',
+    upload.single('avatar'), 
+    middleware.requireAuth, 
+    vali.validate, 
+    controller.postCreate)
 
 module.exports=router

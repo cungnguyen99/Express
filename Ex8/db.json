@@ -3,40 +3,39 @@
     {
       "name": "Selena Gomez",
       "id": "Xg3q5dM6",
-      "url": "1-2.jpg"
+      "url": "1-2.jpg",
+      "avatar": "1-2.jpg"
     },
     {
       "name": "Taylor swift",
       "id": "_VO5P7vv",
-      "url": "3kroki.jpg"
+      "url": "3kroki.jpg",
+      "avatar": "3kroki.jpg"
     },
     {
       "name": "Cung Nguyễn",
       "id": "eIzgw6ds",
       "url": "1.jpg",
+      "avatar": "1.jpg",
       "email": "cungnv2912@gmail.com",
       "passWord": "202cb962ac59075b964b07152d234b70"
     },
     {
       "name": "Anne Kendrick",
       "id": "Ryj_lVS3",
-      "url": "2.jpg"
+      "url": "2.jpg",
+      "avatar": "2.jpg"
     },
     {
       "name": "Chris Evan",
       "url": "4.jpg",
+      "avatar": "4.jpg",
       "id": "lj6t4pb2"
     },
     {
-      "name": "Anne Hathaway",
-      "url": "1234",
-      "id": "9ccYHIDU"
-    },
-    {
-      "name": "Anne Hathaway",
-      "url": "1234",
-      "id": "OEqvpQ0e",
-      "avatar": ""
+      "name": "Selena Gomez",
+      "id": "OyfrDz79",
+      "avatar": "uploads/fac88b72a026a6d7e8c5ab8f31910cf8"
     }
   ],
   "product": [

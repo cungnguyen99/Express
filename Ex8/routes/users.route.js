@@ -24,7 +24,6 @@ router.get('/:userId',middleware.requireAuth, controller.get)
 //truoc khi tao user moi cung bat nguoi dung dang nhap
 router.post('/create',
     upload.single('avatar'), 
-    middleware.requireAuth, 
     vali.validate, 
     controller.postCreate)
 

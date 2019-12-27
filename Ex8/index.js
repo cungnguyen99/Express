@@ -8,6 +8,7 @@ const port = 3000
 var userRoute=require('./routes/users.route')
 var authRoute=require('./routes/auth.route')
 var productRoute=require('./routes/product.route')
+var sessionMiddleware=require('./middleware/session.middleware')
 
 app.set('view engine', 'pug');
 
@@ -18,6 +19,9 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 app.use(cookieParser(process.env.MyDarling))
+
+//khai bao nhu nay de no se tao ra mot cookie o moi duong dan
+app.use(sessionMiddleware)
 
 app.use(express.static('public'))
 

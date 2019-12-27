@@ -45,6 +45,8 @@ module.exports.postLogin=function(req,res){
 
     }
 
+    //Khi nhan login se tao ra 1 cookie voi id la idUser, iduser nay dung trong file auth.middleware 
+    //de ktra xem co cookie hay chua. neu co roi thi cookie se co o tren trang web luon va dung duoc luon de ktra
     res.cookie('idUser', user.id, {
         signed: true
     })

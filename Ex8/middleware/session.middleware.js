@@ -27,7 +27,8 @@ module.exports=function(req, res, next){
 
         });
 
-        // db.get('')
+        //them mot obj co ten la id va gia tri la sesionId
+        db.get('session').push({id: sessionId}).write()
     }
 
     next();

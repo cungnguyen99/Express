@@ -8,6 +8,7 @@ const port = 3000
 var userRoute=require('./routes/users.route')
 var authRoute=require('./routes/auth.route')
 var productRoute=require('./routes/product.route')
+var cartRoute=require('./routes/cart.route')
 var sessionMiddleware=require('./middleware/session.middleware')
 
 app.set('view engine', 'pug');
@@ -32,5 +33,7 @@ app.use('/users', userRoute);
 app.use('/auth', authRoute);
 
 app.use('/product', productRoute);
+
+app.use('/cart', cartRoute)
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

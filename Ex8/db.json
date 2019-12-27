@@ -639,5 +639,14 @@
       "image": "https://loremflickr.com/320/240",
       "description": "sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus etiam vel augue vestibulum rutrum rutrum"
     }
+  ],
+  "session": [
+    {
+      "id": "7yjqJx2g",
+      "cart": {
+        "b7e02074-2073-4dd6-974d-eb29116ce751": 2,
+        "baa4be6b-1c32-48cf-ad14-15acf4901ad1": 1
+      }
+    }
   ]
 }

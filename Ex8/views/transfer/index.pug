@@ -1,0 +1,10 @@
+extends ../layout/common 
+block content
+    .container
+        h1 Transfer Money
+        form(action="/transfer/create", method="POST")
+            .form-group
+                lable(for="name") Account
+                input#name.form-control(name="account", type="text",class="my-3")
+                lable(for="url") Amount
+                input#url.form-control(name="amount", type="text",class="my-3")

@@ -7,6 +7,7 @@ const app = express()
 const port = 3000
 var userRoute=require('./routes/users.route')
 var authRoute=require('./routes/auth.route')
+var transferRoute=require('./routes/transfer.route')
 var productRoute=require('./routes/product.route')
 var cartRoute=require('./routes/cart.route')
 var sessionMiddleware=require('./middleware/session.middleware')
@@ -31,6 +32,8 @@ app.get('/', (req, res) => res.render('index.pug',{name: 'Cung'}))
 app.use('/users', userRoute);
 
 app.use('/auth', authRoute);
+
+app.use('/transfer', transferRoute);
 
 app.use('/product', productRoute);
 

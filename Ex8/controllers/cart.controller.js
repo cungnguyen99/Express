@@ -30,11 +30,10 @@ module.exports.addToCart=function(req, res, next){
         .set('cart.'+productId,count+1)
         .write()
 
-    res.locals.countCart = db.get("sessions").find({ id: sessionId }).get("cart").size().value();
+    var countCart=db.get("sessions").find({ id: sessionId }).get("cart").size().value()
 
-    res.render('product/index.pug',{
-        
-        sum: countCart
+    // res.locals.countCart = countCart;
 
-    })
+    res.redirect('/product')
+
 }

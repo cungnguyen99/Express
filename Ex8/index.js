@@ -3,6 +3,9 @@ console.log(process.env.MyDarling)
 const express = require('express')
 const bodyParser=require('body-parser')
 const cookieParser=require('cookie-parser')
+//khai bao csrf de su dung token cho chuyen tien bai 23
+var csurf = require('csurf')
+
 const app = express()
 const port = 3000
 var userRoute=require('./routes/users.route')
@@ -24,6 +27,9 @@ app.use(cookieParser(process.env.MyDarling))
 
 //khai bao nhu nay de no se tao ra mot cookie o moi duong dan
 app.use(sessionMiddleware)
+
+//su dung csrf
+app.use(csurf({ cookie: true }))
 
 app.use(express.static('public'))
 

@@ -4,6 +4,8 @@ block content
         h1 Transfer Money
         form(action="/transfer/create", method="POST")
             .form-group
+                //khi gui se gui cung token
+                input(type="hidden", name="_csrf", value=csrfToken)
                 lable(for="name") Account
                 input#name.form-control(name="account", type="text",class="my-3")
                 lable(for="url") Amount

@@ -1,0 +1,50 @@
+html
+    head
+        link( rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css")
+        link(rel="stylesheet", href="/styles/user.css")
+        link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.8.1/css/all.css",
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf",
+         crossorigin="anonymous")
+    body 
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            img(src="/images/pexels-photo-776373.jpeg", class="img-home" alt="")
+            a.navbar-brand(href='/users') List users
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                        a.nav-link(href='/') Home 
+                            span.sr-only (current)
+                    li.nav-item
+                        a.nav-link(href='/users/create') New user
+                    li.nav-item
+                        a.nav-link(href='/users/Xg3q5dM6') Top user
+                    li.nav-item
+                        a.nav-link(href='/product') Product
+                    li.nav-item
+                        a.nav-link(href='/cart') Cart
+                            span &nbsp
+                            b=sum
+                form.form-inline.my-2.my-lg-0
+                    input.form-control.mr-sm-2(type='search', placeholder='Search', aria-label='Search')
+                    button.btn.btn-outline-success.my-2.my-sm-0(type='submit') Search
+            if user 
+                p=user.name
+
+        block content
+
+        #container
+            footer
+                .container-fluid.p-0
+                    .content-down
+                        .social.container.py-2
+                            .row.d-flex.justify-content-between.flex-row
+                                h3(style='font-weight: 400; color: #fff') W@termelon
+                                .logo
+                                    i.fab.fa-facebook-square.mx-3(style='color: #3b5998')
+                                    i.fab.fa-instagram.mx-3(style='color: #E1306C;')
+                                    i.fab.fa-twitter.mx-3(style='color: #00acee')
+                                    i.fab.fa-youtube.mx-3(style='color: #c4302b')
+
+            block footer

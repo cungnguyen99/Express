@@ -18,6 +18,7 @@ var transferRoute=require('./routes/transfer.route')
 var productRoute=require('./routes/product.route')
 var cartRoute=require('./routes/cart.route')
 var sessionMiddleware=require('./middleware/session.middleware')
+var apiRoute=require('./api/route/products.route')
 
 app.set('view engine', 'pug');
 
@@ -48,5 +49,7 @@ app.use('/transfer', transferRoute);
 app.use('/product', productRoute);
 
 app.use('/cart', cartRoute)
+
+app.use('/api/products', apiRoute)
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

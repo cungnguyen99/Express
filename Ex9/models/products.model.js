@@ -1,7 +1,7 @@
-var mongooes=require('mongoose')
+var mongoose=require('mongoose')
 
 //khai bao schema : khai bao nhung field co trong obj
-var productSchema=new mongooes.Schema({
+var productSchema=new mongoose.Schema({
     name: String,
     image: String,
     description: String,

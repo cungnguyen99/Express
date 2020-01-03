@@ -2,9 +2,14 @@ var shortid=require('shortid')
 
 var db=require('../db.js')
 
-module.exports.index=(req, res) => res.render('users/index.pug',{
+var User = require('../models/users.model')
 
-    userList:db.get('users').value() 
+module.exports.index=(req, res) => User.find().then(function (users) {
+
+    res.render('users/index.pug',{
+        userList: users
+    }
+    )
 
 })
 

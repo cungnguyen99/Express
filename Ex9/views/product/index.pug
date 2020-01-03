@@ -11,16 +11,16 @@ block content
               h5.card-title=val.name
               p.card-text=val.description
               a.btn.btn-primary(href='/cart/add/'+val.id) Ađd Cart
-    //- nav(aria-label='Page navigation example')
-    //-     ul.pagination
-    //-       li.page-item
-    //-         a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
-    //-             span(aria-hidden='true') &laquo;
-    //-             span.sr-only Previous
-    //-       each val in products
-    //-         li.page-item
-    //-         a.page-link(href='/product?page='+val)=val
-    //-       li.page-item
-    //-         a.page-link(href='/product?page='+(page+1), aria-label='Next')
-    //-             span(aria-hidden='true') &raquo;
-    //-             span.sr-only Next
+    nav(aria-label='Page navigation example')
+        ul.pagination
+          li.page-item
+            a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
+                span(aria-hidden='true') &laquo;
+                span.sr-only Previous
+          each val in products
+            li.page-item
+            a.page-link(href='/product?page='+val)=val
+          li.page-item
+            a.page-link(href='/product?page='+(page+1), aria-label='Next')
+                span(aria-hidden='true') &raquo;
+                span.sr-only Next

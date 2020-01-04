@@ -17,15 +17,13 @@ module.exports.search=function(req, res){
 
     var val=req.query.nameQuery;
 
-    var matchedArr=db.get('users').value().filter(function(user){
+    User.find({name: val}).then(function(matchedArr){
 
-        return user.name.toLowerCase().indexOf(val.toLowerCase()) !== -1;
+        res.render('users/index.pug',{
 
-    })
-
-    res.render('users/index.pug',{
-
-        userList:matchedArr
+            userList:matchedArr
+    
+        })
 
     })
     

@@ -8,3 +8,9 @@ module.exports.index = function (req, res) {
 
     })
 }
+module.exports.create = async function (req, res) {
+
+    var product=await Product.create(req.body)
+
+    res.json(product)
+}

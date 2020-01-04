@@ -6,4 +6,6 @@ var controller=require('../controller/products.controller');
 
 router.get('/', controller.index)
 
+router.post('/', controller.create)
+
 module.exports=router

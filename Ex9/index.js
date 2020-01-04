@@ -33,6 +33,9 @@ app.use(cookieParser(process.env.MyDarling))
 //khai bao nhu nay de no se tao ra mot cookie o moi duong dan
 app.use(sessionMiddleware)
 
+//phai de sau bodyParser de khi req.body se co du lieu
+app.use('/api/products', apiRoute)
+
 //su dung csrf
 app.use(csurf({ cookie: true }))
 
@@ -49,7 +52,5 @@ app.use('/transfer', transferRoute);
 app.use('/product', productRoute);
 
 app.use('/cart', cartRoute)
-
-app.use('/api/products', apiRoute)
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

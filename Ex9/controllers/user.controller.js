@@ -8,7 +8,7 @@ module.exports.index=(req, res) => User.find().then(function (users) {
 
     res.render('users/index.pug',{
         userList: users
-    }
+        }
     )
 
 })
@@ -17,13 +17,19 @@ module.exports.search=function(req, res){
 
     var val=req.query.nameQuery;
 
-    User.find({name: val}).then(function(matchedArr){
+    var matchedArr=User.find().then(function(users){
 
-        res.render('users/index.pug',{
+        return users.filter(function(user){
 
-            userList:matchedArr
+            return user.name.toLowerCase().includes(val.toLowerCase());
     
         })
+
+    })
+
+    res.render('users/index.pug',{
+
+        userList:matchedArr
 
     })
     

@@ -4,12 +4,13 @@ var db=require('../db.js')
 
 var User = require('../models/users.model')
 
-module.exports.index=(req, res) => User.find().then(function (users) {
+module.exports.index=(req, res)=> User.find().then(function (users) {
 
-    res.render('users/index.pug',{
-        userList: users
-        }
-    )
+                        res.render('users/index.pug',{
+
+                            userList: users
+
+                        })
 
 })
 
@@ -17,22 +18,14 @@ module.exports.search=function(req, res){
 
     var val=req.query.nameQuery;
 
-    var matchedArr=User.find().then(function(users){
+    User.find({name: new RegExp('^'+val+'$', "i")},function(err, doc) {
 
-        return users.filter(function(user){
+        res.render('users/index.pug',{
 
-            return user.name.toLowerCase().includes(val.toLowerCase());
+            userList:doc
     
         })
-
-    })
-
-    res.render('users/index.pug',{
-
-        userList:matchedArr
-
-    })
-    
+      });
 }
 
 module.exports.create=function(rep,res){

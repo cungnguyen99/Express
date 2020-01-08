@@ -34,7 +34,7 @@ app.use(cookieParser(process.env.MyDarling))
 app.use(sessionMiddleware)
 
 //phai de sau bodyParser de khi req.body se co du lieu
-app.use('/api/products', apiRoute)
+app.use('/api/products/', apiRoute)
 
 //su dung csrf
 app.use(csurf({ cookie: true }))

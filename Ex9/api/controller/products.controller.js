@@ -45,9 +45,16 @@ module.exports.update=function(req, res){
     })
 }
 
-module.exports.create = async function (req, res) {
+module.exports.create = function (req, res) {
 
-    var product=await Product.create(req.body)
-
-    res.json(product)
+    Product.create(req.body)
+    .then(function(product){
+        res.json(product)
+    })
+    .catch(function(err){
+        res.json({
+            confirmation: 'fail',
+            message: err.message
+        })
+    })
 }

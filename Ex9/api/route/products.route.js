@@ -8,6 +8,8 @@ router.get('/', controller.index)
 
 router.post('/', controller.create)
 
+router.get('/update', controller.update)
+
 router.get('/:id', controller.get)
 
 module.exports=router

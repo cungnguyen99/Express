@@ -4,15 +4,15 @@ block content
   .container
     .row
       h3 Create new user
-      form(action="/api/product", method="POST")
-            .form-group
-                lable(for="name") Name
-                input#name.form-control(name="name", type="text",class="my-3")
-                lable(for="url") Image
-                input#url.form-control(name="url", type="text",class="my-3")
-                lable(for="avatar") Description
-                input.form-control(name="avatar", type="text",class="my-3")
-                button.btn.btn-primary Craete
+      form(action="/api/products", method="POST")
+        .form-group
+            lable(for="name") Name
+            input#name.form-control(name="name", type="text",class="my-3")
+            lable(for="url") Image
+            input#url.form-control(name="url", type="text",class="my-3")
+            lable(for="avatar") Description
+            input.form-control(name="avatar", type="text",class="my-3")
+            button.btn.btn-primary Craete
     .row
       each val, index in userList
         .col.my-3

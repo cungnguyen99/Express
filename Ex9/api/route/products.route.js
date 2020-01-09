@@ -12,4 +12,6 @@ router.get('/update', controller.update)
 
 router.get('/:id', controller.get)
 
+router.get('/remove', controller.remove)
+
 module.exports=router

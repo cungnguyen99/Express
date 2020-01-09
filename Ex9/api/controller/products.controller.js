@@ -45,9 +45,33 @@ module.exports.update=function(req, res){
     })
 }
 
+module.exports.remove=function(req, res){
+
+    // var query=req.query
+
+    // Product.findByIdAndRemove({id: query.id})
+    // .then(function(product){
+        res.json({
+            confirmation: 'success',
+            message: 'Product successflly remove.'
+        })
+    // })
+    // .catch(function(err){
+    //     res.json({
+    //         confirmation: 'fail',
+    //         message: 'Product '+query.id +' not found'
+    //     })
+    // })
+}
+
 module.exports.create = function (req, res) {
 
-    Product.create(req.body)
+    var data={
+        name: req.body.name,
+        image: req.body.url,
+        description: req.body.avatar
+    }
+    Product.create(data)
     .then(function(product){
         res.json(product)
     })

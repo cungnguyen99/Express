@@ -47,21 +47,21 @@ module.exports.update=function(req, res){
 
 module.exports.remove=function(req, res){
 
-    // var query=req.query
+    var id=req.query.id
 
-    // Product.findByIdAndRemove({id: query.id})
-    // .then(function(product){
+    Product.findByIdAndRemove(id)
+    .then(function(product){
         res.json({
             confirmation: 'success',
             message: 'Product successflly remove.'
         })
-    // })
-    // .catch(function(err){
-    //     res.json({
-    //         confirmation: 'fail',
-    //         message: 'Product '+query.id +' not found'
-    //     })
-    // })
+    })
+    .catch(function(err){
+        res.json({
+            confirmation: 'fail',
+            message: 'Product '+id +' not found'
+        })
+    })
 }
 
 module.exports.create = function (req, res) {

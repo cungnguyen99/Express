@@ -2,6 +2,9 @@ var db=require('../db.js')
 
 var md5=require('md5')
 
+
+var User = require('../models/users.model')
+
 module.exports.login=function(req, res){ 
 
     res.render('auth/authLogin')
@@ -15,7 +18,7 @@ module.exports.postLogin=function(req,res){
 
     var pass= req.body.passLogin;
 
-    var user=db.get('users').find({email: email}).value();
+    var user=User.findOne({email: email});
 
     if(!user){
 
@@ -31,7 +34,7 @@ module.exports.postLogin=function(req,res){
 
     }
 
-    if(user.passWord!==md5(pass)){
+    if(user.password!==md5(pass)){
 
         res.render('auth/authLogin',{
 

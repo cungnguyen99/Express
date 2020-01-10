@@ -1,6 +1,6 @@
-var shortid=require('shortid')
-
 var db=require('../db.js')
+
+var md5=require('md5')
 
 var User = require('../models/users.model')
 
@@ -38,20 +38,26 @@ module.exports.get= function(req, res){
     
     var idSearch=req.params.userId;
 
-    var user=db.get('users').find({id: idSearch}).value();
-
-    res.render('users/view',{
-        userInfo: user       
-    });
+    User.findById(idSearch, function(err,data){
+        res.render('users/view',{
+            userInfo: data       
+        });
+    })
 }
 
 module.exports.postCreate=function(req,res){
 
-    req.body.id=shortid.generate();
-
     req.body.avatar=req.file.path.split(/[\\/]/).slice(1).join('/')
+
+    var data=new User({
+        name: req.body.name,
+        phone: req.body.phone,
+        avatar: req.body.avatar,
+        email: req.body.email,
+        password: md5(req.body.pass)
+    })
     
-    db.get('users').push(req.body).write();
+    data.save();
 
     res.redirect('/users');
 }

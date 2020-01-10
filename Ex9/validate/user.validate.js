@@ -7,7 +7,7 @@ module.exports.validate=function(req, res, next){
 
     }
 
-    if(!req.body.url){
+    if(!req.body.email){
 
         err.push('Url image is no required')
         

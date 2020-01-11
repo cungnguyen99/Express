@@ -19,7 +19,7 @@ router.get('/search', controller.search)
 router.get('/create', controller.create)
 
 //truoc khi xem view user thi phai bat nguoi dung dang nhap
-router.get('/:userId',middleware.requireAuth, controller.get)
+router.get('/:userId', controller.get)
 
 //truoc khi tao user moi cung bat nguoi dung dang nhap
 router.post('/create',

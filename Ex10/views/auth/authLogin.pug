@@ -1,0 +1,14 @@
+extends ../layout/common 
+block content
+    .container
+        h1 Login
+        if error
+            each e in error
+                .alert.alert-danger=e
+        form(action="/auth/login", method="POST")
+            .form-group
+                lable(for="name") Email
+                input#name.form-control(name="emailLogin", type="text",class="my-3", value=values?values.email:"")
+                lable(for="url") Pass word
+                input#url.form-control(name="passLogin", type="passWord",class="my-3", value=values?values.pass:"")
+                button.btn.btn-primary Craete

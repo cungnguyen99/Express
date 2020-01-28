@@ -1,0 +1,37 @@
+extends ../layout/common 
+block content
+  h1.text-center.m-4 List users
+  .container
+    .row
+      h3 Create new user
+      form(action="/api/products", method="POST")
+            .form-group
+                lable(for="name") Name
+                input#name.form-control(name="name", type="text",class="my-3")
+                lable(for="url") Image
+                input#url.form-control(name="url", type="text",class="my-3")
+                lable(for="avatar") Description
+                input#avatar.form-control(name="avatar", type="text",class="my-3")
+                button.btn.btn-primary Craete
+    .row
+      each val, index in userList
+        .col.my-3
+          .card(style='width: 18rem;  height=50rem; box-sizing: border-box;')
+            img.card-img-top(src=val.image, alt='Card image cap')
+            .card-body
+              h5.card-title=val.name
+              p.card-text=val.description
+              a.btn.btn-primary(href='/cart/add/'+val.id) Ađd Cart
+    nav(aria-label='Page navigation example')
+        ul.pagination
+          li.page-item
+            a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
+                span(aria-hidden='true') &laquo;
+                span.sr-only Previous
+          each val in products
+            li.page-item
+            a.page-link(href='/product?page='+val)=val
+          li.page-item
+            a.page-link(href='/product?page='+(page+1), aria-label='Next')
+                span(aria-hidden='true') &raquo;
+                span.sr-only Next

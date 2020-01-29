@@ -10,24 +10,24 @@ html
         link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css')
     body 
         nav.nav
-        .burger
-            .burger__patty
-        ul.nav__list.nav__list--hidden
-            li.nav__item
-            a.nav__link(href='/', style='color: #5fc7ea;')
-                i.fa.fa-camera-retro
-            li.nav__item
-            a.nav__link.scrolly(href='/users/create', style='color: #e6d068;')
-                i.fa.fa-bolt
-            li.nav__item
-            a.nav__link(href='/users/5e1845c863b68430d86a3afc', style='color: #e68568;')
-                i.fa.fa-music
-            li.nav__item
-            a.nav__link(href='/product', style='color: #68e6ac;')
-                i.fa.fa-paper-plane
-            li.nav__item
-            a.nav__link(href='/product', style='color: #636e75;')
-                i.fas.fa-guitar
+            .burger
+                .burger__patty
+            ul.nav__list.nav__list--hidden
+                li.nav__item
+                    a.nav__link(href='/', style='color: #5fc7ea;')
+                        i.fa.fa-camera-retro
+                li.nav__item
+                    a.nav__link.scrolly(href='/users/create', style='color: #e6d068;')
+                        i.fa.fa-bolt
+                li.nav__item
+                    a.nav__link(href='/users/5e1845c863b68430d86a3afc', style='color: #e68568;')
+                        i.fa.fa-music
+                li.nav__item
+                    a.nav__link(href='/product', style='color: #68e6ac;')
+                        i.fa.fa-paper-plane
+                li.nav__item
+                    a.nav__link(href='/product', style='color: #636e75;')
+                        i.fas.fa-guitar
             if user 
                 p=user.name
 
@@ -50,5 +50,7 @@ html
         script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
         script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js', integrity='sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1', crossorigin='anonymous')
         script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js', integrity='sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM', crossorigin='anonymous')
+        script
+            include ../script.js
         script(src='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js')
 

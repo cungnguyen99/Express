@@ -19,7 +19,7 @@ module.exports.index = function (req, res) {
 
         res.render('product/index.pug', {
 
-            userList: products,
+            films: products,
 
             products: pageArr,
 

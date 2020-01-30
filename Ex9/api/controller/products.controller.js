@@ -68,18 +68,8 @@ module.exports.create = function (req, res) {
 
     var data={
         name: req.body.name,
-        genre: req.body.genre,
-        country: req.body.country,    
-        time: req.body.time,
-        cast: req.body.cast,
-        imdb: req.body.imdb,
-        manufacture_year: req.body.year,
         image: req.body.url,
-        image_1: req.body.url_1,
-        image_2: req.body.url_2,
-        image_3: req.body.url_3,
-        image_4:req.body.url_4,
-        description: req.body.description,
+        description: req.body.avatar
     }
     Product.create(data)
     .then(function(product){

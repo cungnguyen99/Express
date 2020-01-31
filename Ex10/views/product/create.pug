@@ -1,0 +1,26 @@
+extends ../layout/common 
+block content
+  h1.file-center.m-4 List users
+  .container
+    .row
+      h3 Create new user
+      form(action="/product/create", method="POST", enctype="multipart/form-data")
+            .form-group
+                lable(for="name") Fimls name
+                input#name.form-control(name="name", type="text",class="my-3")
+                lable(for="genre") Genre
+                input#name.form-control(name="genre", type="text",class="my-3")
+                lable(for="country") Country
+                input#name.form-control(name="country", type="text",class="my-3")
+                lable(for="time") Time
+                input#name.form-control(name="time", type="text",class="my-3")
+                lable(for="cast") Cats
+                input#name.form-control(name="cast", type="text",class="my-3")
+                lable(for="imdb") Imdb
+                input#name.form-control(name="imdb", type="text",class="my-3")
+                lable(for="year") Manufacture Year
+                input#name.form-control(name="year", type="text",class="my-3")
+                lable(for="url") Main image
+                input#url.form-control(name="url", type="file",class="my-3" multiple)
+                input#avatar.form-control(name="description", type="text",class="my-3")
+                button.btn.btn-primary Craete

@@ -1,14 +1,8 @@
-//var db=require('../db.js')
-//khong dung lowdb nua ma dùng mongo
 var Product = require('../models/products.model')
 
 module.exports.postCreate=function(req,res){
     
-    req.body.url=req.file.path.split(/[\\/]/).slice(1).join('/')
-    req.body.url_1=req.file.path.split(/[\\/]/).slice(1).join('/')
-    req.body.url_2=req.file.path.split(/[\\/]/).slice(1).join('/')
-    req.body.url_3=req.file.path.split(/[\\/]/).slice(1).join('/')
-    req.body.url_4=req.file.path.split(/[\\/]/).slice(1).join('/')
+    req.body.url=req.files
 
     var data=new Product({
         name: req.body.name,
@@ -19,10 +13,6 @@ module.exports.postCreate=function(req,res){
         imdb: req.body.imdb,
         manufacture_year: req.body.year,
         image: req.body.url,
-        image_1: req.body.url_1,
-        image_2: req.body.url_2,
-        image_3: req.body.url_3,
-        image_4:req.body.url_4,
         description: req.body.description,
     })
     
@@ -33,15 +23,8 @@ module.exports.postCreate=function(req,res){
 
 module.exports.create=function(rep,res){
 
-    Product.find().then(function (users) {
+    res.render('product/create.pug');
 
-        res.render('product/index.pug',{
-
-            fimls: users
-
-        })
-
-    })
 }
 
 module.exports.index = function (req, res) {
@@ -70,4 +53,5 @@ module.exports.index = function (req, res) {
         })
 
     })
+    
 }

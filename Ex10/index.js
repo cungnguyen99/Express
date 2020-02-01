@@ -20,6 +20,8 @@ var cartRoute=require('./routes/cart.route')
 var sessionMiddleware=require('./middleware/session.middleware')
 var apiRoute=require('./api/route/products.route')
 
+var Product = require('./models/products.model')
+
 app.set('view engine', 'pug');
 
 app.set('views', './views');
@@ -38,7 +40,14 @@ app.use(sessionMiddleware)
 
 app.use(express.static('public'))
 
-app.get('/', (req, res) => res.render('index.pug',{name: 'Cung'}))
+app.get('/', (req, res) =>  Product.find().then(function (products) {
+
+    res.render('index.pug', {
+
+        films: products
+    })
+
+}))
 
 app.use('/users', userRoute);
 

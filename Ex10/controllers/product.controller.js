@@ -2,7 +2,7 @@ var Product = require('../models/products.model')
 
 module.exports.postCreate=function(req,res){
     
-    req.body.url=req.files
+    var paths = req.files.map(file => file.path.split(/[\\/]/).slice(1).join('/'))
 
     var data=new Product({
         name: req.body.name,
@@ -12,7 +12,7 @@ module.exports.postCreate=function(req,res){
         cast: req.body.cast,
         imdb: req.body.imdb,
         manufacture_year: req.body.year,
-        image: req.body.url,
+        image: paths,
         description: req.body.description,
     })
     

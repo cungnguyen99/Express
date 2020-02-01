@@ -9,7 +9,7 @@ var productSchema=new mongoose.Schema({
     cast: String,
     imdb: String,
     manufacture_year: String,
-    image: String,
+    image:[String] ,
     description: String,
 })
 

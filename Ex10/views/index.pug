@@ -89,7 +89,7 @@ block content
                 if films
                     each val, index in films
                         .item
-                            img.img__carousel(src='./upload/'+val.image, alt='')
+                            img.img__carousel(src=val.image[0], alt='')
                             .info_fiml.text-white
                                 h3.fiml_name
                                     a(href='') val.name

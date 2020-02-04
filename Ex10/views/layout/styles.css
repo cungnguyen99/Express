@@ -475,7 +475,7 @@ nav ul{
     margin-right: 3%;
     transition: all .5s;
 }
-.owl-carousel h6{
+.owl-carousel.owl-theme h6{
     display: inline-block;
     margin-right: 3%;
 }
@@ -494,12 +494,12 @@ nav ul{
 }
 
 .owl-carousel .prev-slide{
-    background: url(img/nav-icon.png) no-repeat scroll 0 0;
+    background: url(images/nav-icon.png) no-repeat scroll 0 0;
     left: -33px;
     color: #ffe142;
 }
 .owl-carousel .next-slide{
-    background: url(img/nav-icon.png) no-repeat scroll -24px 0px;
+    background: url(images/nav-icon.png) no-repeat scroll -24px 0px;
     right: -33px;
 }
 .owl-carousel .prev-slide:hover{

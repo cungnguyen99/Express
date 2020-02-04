@@ -1,8 +1,8 @@
 require('dotenv').config();
 console.log(process.env.MyDarling)
 const express = require('express')
-const bodyParser=require('body-parser')
-const cookieParser=require('cookie-parser')
+const bodyParser = require('body-parser')
+const cookieParser = require('cookie-parser')
 //khai bao csrf de su dung token cho chuyen tien bai 23
 var csurf = require('csurf')
 
@@ -12,13 +12,13 @@ mongoose.connect(process.env.MONGO_URL)
 
 const app = express()
 const port = 3000
-var userRoute=require('./routes/users.route')
-var authRoute=require('./routes/auth.route')
-var transferRoute=require('./routes/transfer.route')
-var productRoute=require('./routes/product.route')
-var cartRoute=require('./routes/cart.route')
-var sessionMiddleware=require('./middleware/session.middleware')
-var apiRoute=require('./api/route/products.route')
+var userRoute = require('./routes/users.route')
+var authRoute = require('./routes/auth.route')
+var transferRoute = require('./routes/transfer.route')
+var productRoute = require('./routes/product.route')
+var cartRoute = require('./routes/cart.route')
+var sessionMiddleware = require('./middleware/session.middleware')
+var apiRoute = require('./api/route/products.route')
 
 var Product = require('./models/products.model')
 
@@ -40,14 +40,14 @@ app.use(sessionMiddleware)
 
 app.use(express.static('public'))
 
-app.get('/', (req, res) =>  Product.find().then(function (products) {
-
+app.get('/', async(req, res) =>{
+    const films=await Product.find({ genre: 'Action' });
+    const showTV=await Product.find({ genre: 'TV Show' });
     res.render('index.pug', {
-
-        films: products
+        showTV: showTV,
+        films: films
     })
-
-}))
+})
 
 app.use('/users', userRoute);
 

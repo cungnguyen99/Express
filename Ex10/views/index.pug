@@ -92,10 +92,28 @@ block content
                             img.img__carousel(src=val.image[0], alt='')
                             .info_fiml.text-white
                                 h3.fiml_name
-                                    a(href='') val.name
+                                    a(href='')=val.name
                                 i.fas.fa-calendar-day
-                                h6.product_year(style='display: inline-block;') val.manufacture_year
-                                h6.category val.genre
+                                h6.product_year=val.manufacture_year
+                                h6.category=val.genre
+    section.trending_tv.section_padding
+        .pm_heading_text.text-center
+            h2 Trending TV Shows
+            p.p-long Here are some of the most popular movies that our users &amp; viewers enjoy.
+        .container
+            .owl-carousel.owl-theme
+                if showTV
+                    each val in showTV
+                        .item
+                            img.img__carousel(src=val.image[0], alt='')
+                            .info_fiml.text-white
+                                h3.fiml_name
+                                    a(href='')=val.name
+                            i.fas.fa-calendar-day
+                            h6.product_year(style='display: inline-block;')=val.manufacture_year
+                            h6.category=val.gerne
+                h5.preview
+                    a(href='') View Details
     section.popular_categories.section_padding
     .container
         .row.d-flex

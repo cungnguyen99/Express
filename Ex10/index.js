@@ -43,9 +43,11 @@ app.use(express.static('public'))
 app.get('/', async(req, res) =>{
     const films=await Product.find({ genre: 'Action' });
     const showTV=await Product.find({ genre: 'TV Show' });
+    const popularCategories=await Product.find({ genre: 'Popular Categories' });
     res.render('index.pug', {
         showTV: showTV,
-        films: films
+        films: films,
+        popularCategories: popularCategories
     })
 })
 

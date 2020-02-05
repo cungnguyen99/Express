@@ -6,7 +6,7 @@ body {
 }
 
 #container {
-    min-height:70%;
+    /* min-height:70%; */
     position:relative;
  }
 

@@ -109,29 +109,27 @@ block content
                             .info_fiml.text-white
                                 h3.fiml_name
                                     a(href='')=val.name
-                            i.fas.fa-calendar-day
-                            h6.product_year(style='display: inline-block;')=val.manufacture_year
-                            h6.category=val.gerne
-                h5.preview
-                    a(href='') View Details
+                                i.fas.fa-calendar-day
+                                h6.product_year(style='display: inline-block;')=val.manufacture_year
+                                h6.category=val.genre
+                //- h5.preview
+                //-     a(href='') View Details
     section.popular_categories.section_padding
-    .container
-        .row.d-flex
-        .col-md-8
-            .container
-            .row
-                .col-md-6.mb-4.destination-1-image
-                img.img-fluid(src='./img/destinations-2-363x260.jpg', alt='')
-                p.theme_img TV Show
-                .col-md-6.mb-4
-                img.img-fluid(src='./img/destinations-2-363x260.jpg', alt='')
-                .col-md-6.mb-4
-                img.img-fluid(src='./img/destinations-2-363x260.jpg', alt='')
-                .col-md-6.mb-4
-                img.img-fluid(src='./img/destinations-2-363x260.jpg', alt='')
-                .col-md-6.mb-4
-                img.img-fluid(src='./img/destinations-2-363x260.jpg', alt='')
-                .col-md-6.mb-4
-                img.img-fluid(src='./img/destinations-2-363x260.jpg', alt='')
-
-block footer
+        .container
+            .row.d-flex
+                .col-md-8
+                    .container
+                        .row
+                            if popularCategories
+                                each val in popularCategories
+                                    .col-md-6.mb-4.destination-1-image
+                                        a(href="")
+                                            img.img-fluid(src=val.image[1], alt='')
+                                            p.theme_img Marvel
+                .col-md-4
+                    .content-text-popular
+                        h2 Popular Categories
+                        p All content at EMovies is divided into several categories that helps you to easily navigate between them and find what you like.
+                        .button_custom
+                            a(href='') View All
+//- block footer

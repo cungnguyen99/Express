@@ -21,6 +21,8 @@ router.get('/', controller.index)
 
 router.get('/create', controller.create)
 
+router.get('/:productId', controller.get)
+
 router.post('/create',
     upload.array('url', 4),
     controller.postCreate)

@@ -27,6 +27,17 @@ module.exports.create=function(rep,res){
 
 }
 
+module.exports.get= function(req, res){
+    
+    var idSearch=req.params.productId;
+
+    Product.findById(idSearch, function(err,data){
+        res.render('product/view',{
+            productInfo: data       
+        });
+    })
+}
+
 module.exports.index = function (req, res) {
 
     //page bang gia tri cua bien page khi truy cap neu co con khong thi bang 1. vd product?page=3

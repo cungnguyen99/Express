@@ -92,7 +92,7 @@ block content
                             img.img__carousel(src=val.image[0], alt='')
                             .info_fiml.text-white
                                 h3.fiml_name
-                                    a(href='')=val.name
+                                    a(href='/product/'+val.id)=val.name
                                 i.fas.fa-calendar-day
                                 h6.product_year=val.manufacture_year
                                 h6.category=val.genre

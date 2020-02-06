@@ -1,0 +1,12 @@
+extends ../layout/common 
+block content
+    .container
+
+        h1.my-4 View Products
+
+        .d-flex.flex-row
+            //- img(src="/"+productInfo.avatar, class="img-fluid", width="40%")
+            lable.mx-4 Name:
+            b 
+                em
+                    span= productInfo.name

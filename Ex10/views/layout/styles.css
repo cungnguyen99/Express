@@ -25,6 +25,14 @@ a:hover{
     text-decoration: none;
 }
 
+ul{
+    list-style: none;
+    text-decoration: none;
+}
+li{
+    list-style:  none;
+}
+
 h2{
     font-size: 220%;
     font-weight: 700;
@@ -559,4 +567,33 @@ nav ul{
 
 .popular_categories .col-md-4{
     align-self: center;
+}
+
+.popular_categories .content-text-popular p{
+    width: 88%;
+    color: #265077;
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    position: relative;
+    line-height: 140%;
+}
+
+.popular_categories .button_custom a{
+    margin: 0;
+    padding: 5% 13%;
+    border-radius: 30px;
+    color: #1D2337;
+    background-color: #FFE142;
+    border-color: #FFE142;
+    display: inline-block;
+    font-size: 125%;
+    line-height: 1.5;
+    font-weight: 500;
+    left: -15px;
+}
+
+/* FOOTER */
+footer {
+    text-decoration: none;
 }

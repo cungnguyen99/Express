@@ -80,6 +80,35 @@ document.addEventListener('DOMContentLoaded', function () {
         autoplayHoverPause:true,
         navText : ["<div class='nav-btn prev-slide'></div>","<div class='nav-btn next-slide'></div>"]
     }) 
+
+    $('.slider_center .slider').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: true,
+        autoplay: true,
+        infinite: true,
+        cssEase: 'linear'
+    });
+    $('.slider_site_left .slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: true,
+        autoplay: true,
+        infinite: true,
+        cssEase: 'linear',
+        vertical: true,
+        autoplaySpeed: 500
+    });
+    $('.slider_site_right .slider').slick({
+        slidesToShow: 5,
+        slidesToScroll: 1,
+        dots: true,
+        autoplay: true,
+        infinite: true,
+        cssEase: 'linear',
+        vertical: true,
+        autoplaySpeed: 100
+    });
 }, false)
 
 

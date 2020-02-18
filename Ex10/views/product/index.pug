@@ -1,27 +1,66 @@
-extends ../layout/common 
-block content
-    .row
-      if films
-        each val, index in films
-          .col.my-3
-            .card(style='width: 18rem;  height=50rem; box-sizing: border-box;')
-              img.card-img-top(src=val.image[0], alt='Card image cap')
-              .card-body
-                h5.card-title=val.name
-                p.card-file=val.description
-                a.btn.btn-primary(href='/cart/add/'+val.id) Add Cart
-                a.btn.btn-primary(href='/product/'+val.id) View
-    nav(aria-label='Page navigation example')
-        ul.pagination
-          li.page-item
-            a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
-                span(aria-hidden='true') &laquo;
-                span.sr-only Previous
-          if products
-            each val in products
-              li.page-item
-              a.page-link(href='/product?page='+val)=val
+html
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title Shape Hover Effect with SVG | Demo 1
+    meta(name='description', content='Hover Effects with animated SVG Shapes using Snap.svg')
+    meta(name='keywords', content='animated svg, hover effect, grid, svg shape html, ')
+    meta(name='author', content='Codrops')
+    link(rel='shortcut icon', href='../favicon.ico')
+    link(rel='stylesheet', type='text/css', href='./styles/css/normalize.css')
+    link(rel='stylesheet', type='text/css', href='./styles/css/demo.css')
+    link(rel='stylesheet', type='text/css', href='./styles/css/component.css')
+  body
+    .container
+      section#grid.grid.clearfix
+        a(href='#', data-path-hover='M 0,0 0,38 90,58 180.5,38 180,0 z')
+          figure
+            img(src='img/1.png')
+            svg(viewbox='0 0 180 320', preserveaspectratio='none')
+              path(d='M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z ')
+            figcaption
+              h2 Crystalline
+              p Soko radicchio bunya nuts gram dulse.
+              button View
+    script(src='./js/snap.svg-min.js')
+    script
+      include ../script.js
+//- extends ../layout/common 
+//- block content
+      .row
+        if films
+          each val, index in films
+            .col.my-3
+              .card(style='width: 18rem;  height=50rem; box-sizing: border-box;')
+                img.card-img-top(src=val.image[0], alt='Card image cap')
+                .card-body
+                  h5.card-title=val.name
+                  p.card-file=val.description
+                  a.btn.btn-primary(href='/cart/add/'+val.id) Add Cart
+                  a.btn.btn-primary(href='/product/'+val.id) View
+      .container
+        section#grid.grid.clearfix
+          a(href='#', data-path-hover='M 0,0 0,38 90,58 180.5,38 180,0 z')
+            figure
+              img(src='img/1.png')
+              svg(viewbox='0 0 180 320', preserveaspectratio='none')
+                path(d='M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z ')
+              figcaption
+                h2 Crystalline
+                p Soko radicchio bunya nuts gram dulse.
+                button View
+      nav(aria-label='Page navigation example')
+          ul.pagination
             li.page-item
-              a.page-link(href='/product?page='+(page+1), aria-label='Next')
-                  span(aria-hidden='true') &raquo;
-                  span.sr-only Next
+              a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
+                  span(aria-hidden='true') &laquo;
+                  span.sr-only Previous
+            if products
+              each val in products
+                li.page-item
+                a.page-link(href='/product?page='+val)=val
+              li.page-item
+                a.page-link(href='/product?page='+(page+1), aria-label='Next')
+                    span(aria-hidden='true') &raquo;
+                    span.sr-only Next

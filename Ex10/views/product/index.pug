@@ -1,23 +1,31 @@
 html
     head
-        link(rel='stylesheet', type='text/css', href='../styles/css/normalize.css')
-        link(rel='stylesheet', type='text/css', href='../styles/css/demo.css')
         link(rel='stylesheet', type='text/css', href='../styles/css/component.css')
     body
-        .container
-          section.demo-1
-            .grid
-              if films
-                each val, index in films
-                  .box
-                    svg(xmlns='http://www.w3.org/2000/svg', width='100%', height='100%')
-                      line.top(x1='0', y1='0', x2='900', y2='0')
-                      line.left(x1='0', y1='460', x2='0', y2='-920')
-                      line.bottom(x1='300', y1='460', x2='-600', y2='460')
-                      line.right(x1='300', y1='0', x2='300', y2='1380')
-                    h3(style="background-size: cover;background-image: url("+val.image[0]+")") D
-                    span=val.manufacture_year
-                    span=val.name
+      if films
+        each val, index in films
+          .container.shoe
+            .productImage.shoeImg(style="background-image:url("+val.image[0]+")")
+            .size.shoeSize
+              h4 YEAR
+              ul
+                li 2
+                li 0
+                li 1
+                li 9
+            .price.shoePrice
+              h4 PRICE
+              span $150
+            .color.shoeColor
+              h4 COLORS
+              ul
+                li
+                  span.blue
+                li
+                  span.yellow
+                li
+                  span.red
+            .productName.shoeName=val.name
 //-extends ../layout/common 
 //- block content
       .row

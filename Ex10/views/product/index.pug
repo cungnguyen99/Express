@@ -7,14 +7,41 @@ html
         .container
           section.demo-1
             .grid
-              .box
-                svg(xmlns='http://www.w3.org/2000/svg', width='100%', height='100%')
-                  line.top(x1='0', y1='0', x2='900', y2='0')
-                  line.left(x1='0', y1='460', x2='0', y2='-920')
-                  line.bottom(x1='300', y1='460', x2='-600', y2='460')
-                  line.right(x1='300', y1='0', x2='300', y2='1380')
-                h3(style="background-size: cover;background-image: url('../images/index-img-04-356x412.jpg')") D
-                span 2012
-                span Marmalade, Honey
+              if films
+                each val, index in films
+                  .box
+                    svg(xmlns='http://www.w3.org/2000/svg', width='100%', height='100%')
+                      line.top(x1='0', y1='0', x2='900', y2='0')
+                      line.left(x1='0', y1='460', x2='0', y2='-920')
+                      line.bottom(x1='300', y1='460', x2='-600', y2='460')
+                      line.right(x1='300', y1='0', x2='300', y2='1380')
+                    h3(style="background-size: cover;background-image: url("+val.image[0]+")") D
+                    span=val.manufacture_year
+                    span=val.name
+//-extends ../layout/common 
+//- block content
+      .row
+        if films
+          each val, index in films
+            .col.my-3
+              .card(style='width: 18rem;  height=50rem; box-sizing: border-box;')
+                img.card-img-top(src=val.image[0], alt='Card image cap')
+                .card-body
+                  h5.card-title=val.name
+                  p.card-file=val.description
+                  a.btn.btn-primary(href='/cart/add/'+val.id) Add Cart
+                  a.btn.btn-primary(href='/product/'+val.id) View
+      .container
+        section#grid.grid.clearfix
+          a(href='#', data-path-hover='M 0,0 0,38 90,58 180.5,38 180,0 z')
+            figure
+              img(src='img/1.png')
+              svg(viewbox='0 0 180 320', preserveaspectratio='none')
+                path(d='M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z ')
+              figcaption
+                h2 Crystalline
+                p Soko radicchio bunya nuts gram dulse.
+                button View
+
 
 

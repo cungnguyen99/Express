@@ -7,19 +7,25 @@
 	display: grid;
 	justify-items: center;
 	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-	color: cornsilk;
-	font-family: "Roboto Condensed", sans-serif;
+	color:#FFf;
+	background-color: #f1f8f7;
+	font-family: 'Montserrat', sans-serif;
+	overflow-x: hidden;
   }
   .container {
 	width: var(--size);
 	height: var(--size);
 	display: grid;
 	grid-template-columns: repeat(2, 50%);
-	grid-template-rows: repeat(2, 50%);
+	grid-template-rows: repeat(1, 50%);
 	justify-items: center;
 	align-items: center;
 	filter: drop-shadow(0px 0px 7px rgba(1, 1, 1, .7));
   }
+ .productImage.shoeImg{
+	 background-size: cover;
+	 object-fit: cover;
+ }
 
   .productImage {
 	grid-column: 1/span 2;
@@ -44,9 +50,12 @@
 	transition: all 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
 
-  h4,
-  ul,
-  span {
+  .size.shoeSize h4,
+  .size.shoeSize ul,
+  .price.shoePrice h4,
+  .price.shoePrice span,
+  .color.shoeColor ul,
+  .color.shoeColor h4{
 	padding: 0px;
 	margin: 0px;
   }
@@ -62,13 +71,13 @@
 	opacity: 0;
 	transition: all 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
-  .size ul li,
-  .color ul li {
+  .container.shoe .size ul li,
+  .container.shoe .color ul li {
 	list-style: none;
 	width: 20px;
-	height: 20px;
+	height: 25px;
 	margin: 5px;
-	padding: 5px;
+	padding: 2px;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.5);
   }
@@ -99,10 +108,10 @@
 	opacity: 0;
 	transition: all 0.6s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
-  .price h4 {
+  .container.shoe .price h4 {
 	margin-bottom: 8px;
   }
-  .price span {
+  .container.shoe .price span {
 	width: 20px;
 	height: 20px;
 	padding: 5px;
@@ -135,6 +144,7 @@
 	);
 	transform: rotate(-15deg);
 	transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
+	filter: brightness(.88);
   }
   .productImage:hover ~ * {
 	opacity: 1;

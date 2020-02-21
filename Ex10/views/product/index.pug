@@ -1,6 +1,9 @@
-html
-    head
+extends ../layout/common 
+block link
+        link(rel='stylesheet', type='text/css', href='../styles/styles.css')
         link(rel='stylesheet', type='text/css', href='../styles/css/component.css')
+        link(href='https://fonts.googleapis.com/css?family=Montserrat&display=swap', rel='stylesheet')
+block content
     body
       if films
         each val, index in films

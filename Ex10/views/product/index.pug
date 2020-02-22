@@ -1,34 +1,47 @@
 extends ../layout/common 
 block link
         link(rel='stylesheet', type='text/css', href='../styles/styles.css')
-        link(rel='stylesheet', type='text/css', href='../styles/css/component.css')
+        link(rel='stylesheet', type='text/css', href='../styles/products.css')
         link(href='https://fonts.googleapis.com/css?family=Montserrat&display=swap', rel='stylesheet')
 block content
     body
-      if films
-        each val, index in films
-          .container.shoe
-            .productImage.shoeImg(style="background-image:url("+val.image[0]+")")
-            .size.shoeSize
-              h4 YEAR
-              ul
-                li 2
-                li 0
-                li 1
-                li 9
-            .price.shoePrice
-              h4 PRICE
-              span $150
-            .color.shoeColor
-              h4 COLORS
-              ul
-                li
-                  span.blue
-                li
-                  span.yellow
-                li
-                  span.red
-            .productName.shoeName=val.name
+      .wrapper_products
+        if films
+          each val, index in films
+            .container.shoe
+              .icon_heart
+                i.fas.fa-heart
+              .productImage.shoeImg(style="background-image:url("+val.image[0]+")")
+              .size.shoeSize
+                h4 YEAR
+                ul
+                  li 2
+                  li 0
+                  li 1
+                  li 9
+              .price.shoePrice
+                h4 PRICE
+                span $150
+              .color.shoeColor
+                h4 COLORS
+                ul
+                  li
+                    span.blue
+                  li
+                    span.yellow
+                  li
+                    span.red
+              .productName.shoeName=val.name
+              .content__down.d-flex.flex-row
+                .stars  
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                  i.fas.fa-star
+                .button_custom
+                  a(href='/product/'+val.id) View
+
 //-extends ../layout/common 
 //- block content
       .row

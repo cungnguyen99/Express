@@ -3,7 +3,7 @@
 	--blue: #aad5ff;
 	--lb: rgba(0, 0, 0, 0.5);
   }
-  body {
+.wrapper_products {
 	display: grid;
 	justify-items: center;
 	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
@@ -11,8 +11,10 @@
 	background-color: #f1f8f7;
 	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
+	padding-bottom: 6%;
   }
-  .container {
+  .container.shoe {
+	position: relative;
 	width: var(--size);
 	height: var(--size);
 	display: grid;
@@ -20,7 +22,8 @@
 	grid-template-rows: repeat(1, 50%);
 	justify-items: center;
 	align-items: center;
-	filter: drop-shadow(0px 0px 7px rgba(1, 1, 1, .7));
+	margin-bottom: 6%;
+	/* filter: drop-shadow(0px 0px 7px rgba(1, 1, 1, .7)); */
   }
  .productImage.shoeImg{
 	 background-size: cover;
@@ -146,15 +149,71 @@
 	transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
 	filter: brightness(.88);
   }
-  .productImage:hover ~ * {
+  .productImage:hover~*:not(.content__down) {
 	opacity: 1;
 	transform: rotate(-15deg);
 	transition: all 0.4s cubic-bezier(0.86, 0, 0.07, 1);
   }
   .credits{
-	  color:white;
-	  font-size: 1.2rem;
-	  grid-column: 1 / -1 ;
-	  justify-self: center;
-	  text-align: center;
+	color:white;
+	font-size: 1.2rem;
+	grid-column: 1 / -1 ;
+	justify-self: center;
+	text-align: center;
   }
+  .content__down{
+	  width: 150%;
+	  justify-content:space-between;
+	  margin-left: 66%;
+  }
+  .stars{
+	margin-left: 18%;
+	margin-top: 6%;
+	flex-basis: 45%;
+	flex-grow: 0;
+  }
+.stars i{
+	  color: #f9be30;
+	  font-size: 110%;
+  }
+.button_custom{
+    margin-top: 6%;
+	position: relative;
+	background-color: #ffe142;
+	flex-basis: 55%;
+	flex-grow: 1;
+	padding: 1.5% 1.5%;
+	text-align: center;
+	border-radius: 30px;
+	transition: all .3s ease-in-out;
+}
+.button_custom:hover{
+	background-color:  #f0ce26;
+}
+.button_custom:hover a{
+	color: #fff;
+	text-decoration: none;
+}
+a{
+    text-decoration: none;
+    color: black;
+	transition: all .3s ease-in-out;
+}
+.icon_heart{
+	position: absolute;
+	top: 16%;
+	left: 14%;
+	z-index: 2;
+	background-color: #edf1f1;
+	padding: 2.5% 3%;
+	border-radius: 10px;
+	transition: all .5s ease-in-out;
+	filter: drop-shadow(0px 0px 7px rgba(1, 1, 1, .7));
+}
+.icon_heart i{
+	color: #d81a24;
+	font-size: 200%;
+}
+.productImage:hover .icon_heart{
+	transform: scaleX(1.5);
+}

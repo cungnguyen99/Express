@@ -52,9 +52,8 @@
 	);
 	transition: all 0.7s cubic-bezier(0.895, 0.03, 0.685, 0.22);
   }
-
+.size.shoeSize ul,
   .size.shoeSize h4,
-  .size.shoeSize ul,
   .price.shoePrice h4,
   .price.shoePrice span,
   .color.shoeColor ul,
@@ -168,16 +167,15 @@
   }
   .stars{
 	margin-left: 18%;
-	margin-top: 6%;
 	flex-basis: 45%;
 	flex-grow: 0;
   }
 .stars i{
 	  color: #f9be30;
-	  font-size: 110%;
+	  font-size: 100%;
   }
 .button_custom{
-    margin-top: 6%;
+    margin-top: -3%;
 	position: relative;
 	background-color: #ffe142;
 	flex-basis: 55%;
@@ -205,7 +203,7 @@ a{
 	left: 14%;
 	z-index: 2;
 	background-color: #edf1f1;
-	padding: 2.5% 3%;
+	padding: 2.5% 2.5%;
 	border-radius: 10px;
 	transition: all .5s ease-in-out;
 	filter: drop-shadow(0px 0px 7px rgba(1, 1, 1, .7));

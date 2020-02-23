@@ -3,12 +3,128 @@
 	--blue: #aad5ff;
 	--lb: rgba(0, 0, 0, 0.5);
   }
+  body, html{
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	background-color: #f1f8f7;
+  }
+  /* header */
+  .nav_wrap{
+	  background-color: #181E24;
+	  padding: 0.8% 1%;
+	  border-radius: 50px;
+	  margin-top: 2%;
+	  filter: drop-shadow(0px 0px 7px rgba(108, 163, 255, .7)); 
+  }
+  .logo img{
+	  width: 85%;
+  }
+  .search{
+	position: relative;
+	top: 0;
+	left: 0;
+  }
+  input{
+	  border-radius: 30px;
+  }
+  .search a i{
+	  position: absolute;
+	  top: 22%;
+	  right: 5px;
+}
+  .wrapper_img{
+	margin: 5% 6%;
+	position: relative;
+	overflow: hidden;
+	width: 1180px;
+	height: 460px;
+	border-bottom: none;
+	border: 1px solid #617A92;
+	background: #181E24;
+   }
+   .slick-prev.slick-arrow,.slick-next.slick-arrow{
+	 display: none;
+	 visibility: hidden;
+	 opacity: 0;
+   }
+   .left .btn-image img{
+	 height: auto;
+	 width: 45%;
+	 float: left;
+	 margin-top: 8px;
+	 margin-bottom: 8px;
+	 object-fit: cover;
+   }
+	.slider div img{
+	 width: 100%;
+	 height: auto;
+	 padding-top: 8px;
+   }
+   
+   .slick-dots{
+	 display: none;
+	 visibility: hidden;
+	 opacity: 0;
+   }
+   .left img{
+	 border-radius: 4px;
+   }
+   p.tille{
+	 font-size: 75%;
+	 color: aliceblue;
+	 margin-top: -15px;
+   }
+   .content_img h5{
+	 color: #de781f;
+	 font-size: 85%;
+	 font-weight: 700;
+   }
+   .content_img{
+	 transform: translateX(3%);
+   }
+   .fas.fa-arrow-right{
+	 margin: 14px 0px;
+	 margin-right: 8px;
+	 font-size: 80%;
+   }
+
+   .judul .tille_bar h2{
+	   font-size: 230%;
+	   font-weight: 700;
+	   text-align: center;
+	   position: relative;
+	   top: 0;
+	   left: 0;
+	   color: #265077;
+	   margin-bottom: 3%;
+   }
+   .judul .tille_bar h2::after{
+	content: '';
+    border: 1px solid #dddddd;
+    width: 170px;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+   }
+   .judul .tille_bar h2::before{
+	content: '';
+    border: 2px solid #ff4444;
+    width: 35px;
+    position: absolute;
+    bottom: -21px;
+    left: 0;
+    right: 0;
+    margin: 0px auto;
+    z-index: 1;
+   }
 .wrapper_products {
 	display: grid;
 	justify-items: center;
 	grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 	color:#FFf;
-	background-color: #f1f8f7;
 	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
 	padding-bottom: 6%;

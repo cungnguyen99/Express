@@ -1,6 +1,5 @@
 extends ../layout/common 
 block link
-        link(rel='stylesheet', type='text/css', href='../styles/common.css')
         link(rel='stylesheet', type='text/css', href='../styles/products.css')
         link(href='https://fonts.googleapis.com/css?family=Montserrat&display=swap', rel='stylesheet')
 block content
@@ -9,17 +8,17 @@ block content
         .container
           .nav_wrap.d-flex.flex-row.justify-content-between
             .logo
-              img(src='./images/logo-default.png', alt='')
-            .search.align-self-center
-              input(type="text")
-              a(href='')
+              img(src='/images/logo-default.png', alt='')
+            form(action="/product/search", method='GET')
+              input(type="text" name="name")
+              button.btn
                 i.fas.fa-search
       .container-fluid
         .row.wrapper_img
           .col-md-4
             .left.d-flex.flex-column
               .btn-image
-                img(src='./images/slide-1.jpg', alt='')
+                img(src='/images/slide-1.jpg', alt='')
                 .content_img
                   h5
                     i.fas.fa-arrow-right
@@ -27,7 +26,7 @@ block content
                   p.tille
                     | Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imp...
               .btn-image
-                img(src='./images/slide-2.jpg', alt='')
+                img(src='/images/slide-2.jpg', alt='')
                 .content_img
                   h5
                     i.fas.fa-arrow-right
@@ -36,7 +35,7 @@ block content
                     | Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imp...
                   p
               .btn-image
-                img(src='./images/slide-3.jpg', alt='')
+                img(src='/images/slide-3.jpg', alt='')
                 .content_img
                   h5
                     i.fas.fa-arrow-right
@@ -44,7 +43,7 @@ block content
                   p.tille
                     | Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imp...
               .btn-image
-                img(src='./images/slide-4.jpg', alt='')
+                img(src='/images/slide-4.jpg', alt='')
                 .content_img
                   h5
                     i.fas.fa-arrow-right
@@ -55,24 +54,24 @@ block content
             .slider_center.prs_vp_center_slidebar_wrapper
               .slider
                 div
-                  img(src='./images/slide-1.jpg')
+                  img(src='/images/slide-1.jpg')
                 div
-                  img(src='./images/slide-2.jpg')
+                  img(src='/images/slide-2.jpg')
                 div
-                  img(src='./images/slide-3.jpg')
+                  img(src='/images/slide-3.jpg')
                 div
-                  img(src='./images/slide-4.jpg')
+                  img(src='/images/slide-4.jpg')
       .container
         .judul
           .tille_bar
-            h2 List Movie Watch
+            h2 LIST MOVIE WATCH
       .wrapper_products
         if films
           each val, index in films
             .container.shoe
               .icon_heart
                 i.fas.fa-heart
-              .productImage.shoeImg(style="background-image:url("+val.image[0]+")")
+              .productImage.shoeImg(style="background-image:url(/"+val.image[0]+")")
               .size.shoeSize
                 h4 YEAR
                 ul

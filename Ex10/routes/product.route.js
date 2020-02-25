@@ -21,9 +21,13 @@ router.get('/', controller.index)
 
 router.get('/create', controller.create)
 
+//phải cho cái search trên cái view mới chạy được. không hiểu sao
+router.get('/search', controller.search)
+
 router.get('/:productId', controller.get)
 
-router.post('/create',
+router.post(
+    '/create',
     upload.array('url', 4),
     controller.postCreate)
 

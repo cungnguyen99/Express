@@ -4,16 +4,16 @@ block link
         link(href='https://fonts.googleapis.com/css?family=Montserrat&display=swap', rel='stylesheet')
 block content
     body
-      .header
-        .container
+      header
+        .container-fluid
           .nav_wrap.d-flex.flex-row.justify-content-between
             .logo
-              img(src='/images/logo-default.png', alt='')
+              img(src='/images/logo-default-133x19.png', alt='')
             form(action="/product/search", method='GET')
-              input(type="text" name="name")
+              input(type="text" placeholder="Search for name movies" name="name")
               button.btn
                 i.fas.fa-search
-      .container-fluid
+      .container-fluid.bg_dark
         .row.wrapper_img
           .col-md-4
             .left.d-flex.flex-column

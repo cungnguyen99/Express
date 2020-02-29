@@ -1,0 +1,158 @@
+body,html{
+    background-color: #f1f8f7;
+    width: 100%;
+    height: 100%;
+}
+.container.products-view, .row, .container-fluid.wrap-photos{
+    width: 100%;
+    height: auto; 
+}
+header{
+    background-image:linear-gradient(225deg,rgba(21,21,21,0.4) 36.97%,rgba(21,21,21,0.26) 100%),
+     url(../../images/bg-image-5.jpg);
+    background-size: cover;
+    background-position: center;
+    background-color: #707070;
+}
+.logo-movie{
+    padding-top: 1.9%;
+}
+p{
+    width: 90%;
+    font-size: 95%;
+    line-height: 23px;
+}
+header ul.post-info-meta-list, ul.post-info-meta-list li{
+    list-style: none;
+    display: inline-block;
+}
+ul.post-info-meta-list{
+    border: 1px solid #c4c4c4;
+    width: 90%;
+    position: relative;
+    margin: 5% 0;
+    top: 0;
+    left: 0;
+    background-color: white;
+}
+ul.post-info-meta-list{
+    padding: 0% 0;
+    border-radius: 4px;
+}
+ul.post-info-meta-list li{
+    padding: 2% 1%;
+    border-radius: 4px;
+    width: 30%;
+    margin-right: -4%;
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.boder-right{
+    width: 1px;
+    height: 15px;
+    position: absolute;
+    top: 0;
+    left: 100px;
+    color: #707070;
+    z-index: 9 !important;
+}
+ul.post-info-meta-list li i{
+    font-size: 20px;
+    opacity: .7;
+    color: #707070;
+}
+span{
+    margin-left: 10%;
+    margin-right: -2%;
+}
+ul.post-info-meta-list li:nth-child(1) span.small-text::after, 
+ul.post-info-meta-list li:nth-child(2) span.small-text::after{
+    content: '';
+    height: 15px;
+    width: 2px;
+    position: absolute;
+    top: 10%;
+    left: 20%;
+    color: #707070;
+} 
+header .content-text{
+    padding: 11% 0;
+}
+header .content-text h2{
+    font-weight: 900;
+    font-size: 42px;
+    color: white;
+    margin-bottom:2%;
+}
+header .content-text p{
+    width: 40%;
+    margin-left: 30%;
+    color: white;
+    font-size: 15px;
+    line-height: 26px;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+table {
+    /* border-collapse: collapse !important; */
+    display: table;
+    border-spacing: 2px;
+    border-color: grey;
+    margin-top: 45px;
+    margin-bottom: 45px;
+}
+.post-info-table tr {
+    border-top: 1px solid #c4c4c4;
+}
+.post-info-table td:first-child {
+    min-width: 110px;
+    padding-left: 0;
+    font-weight: 600;
+    letter-spacing: .03em;
+    white-space: nowrap;
+}
+.post-info-table td {
+    padding: 21px 15px;
+}
+.post-info-table td:last-child {
+    min-width: 300px;
+}
+img.img-right{
+    width: 120%;
+    height: auto;
+}
+.container-fluid.wrap-photos{
+    padding: 0;
+}
+.product-view{
+    margin: 10% auto;
+}
+h2{
+    text-transform: capitalize;
+}
+a.watch-btn{
+    background-color: rgba(0, 0, 0, 0.2 );
+    padding: 0.8% 0;
+    color: white !important;
+    border-radius: 20px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    left: 0;
+    padding-left: 4%;
+    padding-right: 3%;
+    cursor: pointer;
+    transition: all .4s;
+}
+a.watch-btn:hover{
+    background-color: #ffe142;
+}
+a.watch-btn i{
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    font-size: 80%;
+    transform: translateY(-50%);
+
+}

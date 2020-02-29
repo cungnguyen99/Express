@@ -1,12 +1,65 @@
-extends ../layout/common 
+extends ../layout/common
+block link
+    link(rel='stylesheet', type='text/css', href='../styles/products/view.css')
 block content
-    .container
-
-        h1.my-4 View Products
-
-        .d-flex.flex-row
-            //- img(src="/"+productInfo.avatar, class="img-fluid", width="40%")
-            lable.mx-4 Name:
-            b 
-                em
-                    span= productInfo.name
+    header
+        .logo-movie
+            .container
+                .row
+                    .col
+                        img(src='/images/logo-inverse-133x19.png', alt="")
+        .content-text.text-center
+            h2 Movie page
+            p Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Duis aute irure dolor in reprehenderit.
+            a.watch-btn Watch now
+                i.fas.fa-play
+    .container.product-view
+        .row
+            .col-md-8
+                h2=productInfo.name
+                .post-info-meta
+                    ul.post-info-meta-list
+                        li
+                            span
+                                i.fas.fa-calendar-day
+                            span.small-text.font-weight-sbold=productInfo.manufacture_year
+                            .boder-right
+                        li
+                            span
+                                i.far.fa-star
+                            span=productInfo.imdb
+                            .boder-right
+                        li
+                            span
+                                i.fas.fa-globe-americas
+                            span=productInfo.country
+                p.description= productInfo.description
+                table.post-info-table
+                    tbody
+                        tr
+                            td Country
+                            td=productInfo.country
+                        tr
+                            td Cast
+                            td=productInfo.cast
+                        tr
+                            td Duration
+                            td=productInfo.time
+                        tr
+                            td Genre
+                            td=productInfo.genre
+                        tr
+                            td 
+                            td
+                h2 Photos
+                p(class="mt-3 mb-5") Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi modi a asperiores quisquam, qui officiis quaerat vero magni itaque praesentium! Accusantium eveniet illum ex magnam fuga iusto praesentium blanditiis libero.
+                .container-fluid.wrap-photos
+                    .row
+                        .col-md-4
+                            img(src="/"+productInfo.image[1],class="img-fluid", alt="")
+                        .col-md-4
+                            img(src="/"+productInfo.image[2],class="img-fluid", alt="")
+                        .col-md-4
+                            img(src="/"+productInfo.image[3],class="img-fluid", alt="")
+            .col-md-4
+                img(src="/"+productInfo.image[0], class="img-right" alt="")

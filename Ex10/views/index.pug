@@ -110,12 +110,10 @@ block content
                             img.img__carousel(src=val.image[0], alt='')
                             .info_fiml.text-white
                                 h3.fiml_name
-                                    a(href='')=val.name
+                                    a(href='/product/'+val.id)=val.name
                                 i.fas.fa-calendar-day
                                 h6.product_year(style='display: inline-block;')=val.manufacture_year
                                 h6.category=val.genre
-                //- h5.preview
-                //-     a(href='') View Details
     section.popular_categories.section_padding
         .container
             .row.d-flex
@@ -182,3 +180,30 @@ block content
                             img(src='../images/vp5.jpg')
                         div
                             img(src='../images/vp6.jpg')
+    section.testimonials
+        .container
+            .row
+                .col-md-3
+                    img(src="../images/home-2-8.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson
+                .col-md-3
+                    img(src="../images/home-2-9.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson
+                .col-md-3
+                    img(src="../images/home-2-10.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson
+                .col-md-3
+                    img(src="../images/home-2-11.jpg", alt="")
+                    blockquote.testimonial Taylor Alison Swift is an American singer-songwriter.
+                        cite
+                            img(src='https://assets.vogue.com/photos/58bd86fe3bbebb17ef1a6027/master/pass/00-square-emma-watson-feminist.jpg', alt='Emma')
+                            |Emma Watson

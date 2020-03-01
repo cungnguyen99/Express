@@ -4,67 +4,26 @@ block link
         link(href='https://fonts.googleapis.com/css?family=Montserrat&display=swap', rel='stylesheet')
 block content
     body
-      header
-        .container-fluid
-          .nav_wrap.d-flex.flex-row.justify-content-between
-            .logo
-              img(src='/images/logo-default-133x19.png', alt='')
-            form(action="/product/search", method='GET')
-              input(type="text" placeholder="Search for name movies" name="name")
-              button.btn
-                i.fas.fa-search
-      .container-fluid.bg_dark
-        .row.wrapper_img
-          .col-md-4
-            .left.d-flex.flex-column
-              .btn-image
-                img(src='/images/slide-1.jpg', alt='')
-                .content_img
-                  h5
-                    i.fas.fa-arrow-right
-                    | Iron man 3
-                  p.tille
-                    | Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imp...
-              .btn-image
-                img(src='/images/slide-2.jpg', alt='')
-                .content_img
-                  h5
-                    i.fas.fa-arrow-right
-                    | Pirates of Caribbean
-                  p.tille
-                    | Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imp...
-                  p
-              .btn-image
-                img(src='/images/slide-3.jpg', alt='')
-                .content_img
-                  h5
-                    i.fas.fa-arrow-right
-                    | Iron man 3
-                  p.tille
-                    | Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imp...
-              .btn-image
-                img(src='/images/slide-4.jpg', alt='')
-                .content_img
-                  h5
-                    i.fas.fa-arrow-right
-                    | Iron man 3
-                  p.tille
-                    | Nunc tincidunt, elit non cursus euismod, lacus augue ornare metus, egestas imp...
-          .col-md-8
-            .slider_center.prs_vp_center_slidebar_wrapper
-              .slider
-                div
-                  img(src='/images/slide-1.jpg')
-                div
-                  img(src='/images/slide-2.jpg')
-                div
-                  img(src='/images/slide-3.jpg')
-                div
-                  img(src='/images/slide-4.jpg')
+      .header
+        header
+          .container-fluid
+            .nav_wrap.d-flex.flex-row.justify-content-between
+              .logo
+                img(src='/images/logo-inverse-133x19.png', alt='')
+              form(action="/product/search", method='GET')
+                input(type="text" placeholder="Search for name movies" name="name")
+                button.btn
+                  i.fas.fa-search
+            h3 FILMS PRODUCTION  
+            .frame
+              h3 
+                span OURS 
+                span(style="color: #f44d32") FIMLS 
+              p Enjoy Emovies with a alot of fun
       .container
         .judul
           .tille_bar
-            h2 LIST MOVIE WATCH
+            h2.mt-5 LIST MOVIE WATCH
       .wrapper_products
         if films
           each val, index in films
@@ -92,15 +51,17 @@ block content
                   li
                     span.red
               .productName.shoeName=val.name
-              .content__down.d-flex.flex-row
-                .stars  
-                  i.fas.fa-star
-                  i.fas.fa-star
-                  i.fas.fa-star
-                  i.fas.fa-star
-                  i.fas.fa-star
-                .button_custom
-                  a(href='/product/'+val.id) View
+              .content__down
+                .container
+                  .row.d-flex
+                    .col-md-7
+                      .stars  
+                        i.fas.fa-star
+                        p=val.imdb
+                    .col-md-5
+                      .btn-view
+                        a.btn.btn-send(href='/product/'+val.id) View data
+                          i.fas.fa-arrow-right
 
 //-extends ../layout/common 
 //- block content

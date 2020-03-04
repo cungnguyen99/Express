@@ -2,7 +2,7 @@ html,body{
     overflow-x: hidden;
     width: 100%;
     height: 100%;
-    font-family: 'Montserrat', sans-serif;
+    /* font-family: 'Montserrat', sans-serif; */
 }
 nav {
     z-index: 4 !important;

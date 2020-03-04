@@ -19,6 +19,7 @@
 	position: relative;
 	top: 0;
 	left: 0;
+	overflow: hidden;
   }
   .nav_wrap{
 	  padding: 2.5% 1%;
@@ -84,7 +85,24 @@ header .container-fluid>h3{
 	font-weight: 400;
 	font-size: 90%;
 }
-
+.text-scroll-arrow{
+	position: absolute;
+	bottom: 1%;
+	right: 0%;
+	color: white;
+}
+.text-scroll-arrow p{
+	transform: rotate(90deg);
+	font-size: 50%;
+	letter-spacing: 3px;
+	margin-left: -89%;
+	margin-bottom: 1%;
+}
+.text-scroll-arrow i{
+	font-size: 150%;
+	z-index: 10;
+	color: white;
+}
    .judul .tille_bar h2{
 	   font-size: 230%;
 	   font-weight: 700;

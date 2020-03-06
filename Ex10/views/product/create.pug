@@ -1,26 +1,103 @@
 extends ../layout/common 
+block link
+      link(rel='stylesheet', type='text/css', href='../styles/products/create.css')
 block content
-  h1.file-center.m-4 List users
-  .container
+  .header
+    header
+      .container-fluid
+        .nav_wrap.d-flex.flex-row.justify-content-between
+          .logo
+            img(src='/images/logo-inverse-133x19.png', alt='')
+        h3 CREATE NEW FILMS
+        p.p-header Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rerum, vel officia labore praesentium 
+          |itaque iusto aliquid voluptatem cum est.
+        .wrap-a
+          a.watch-btn Watch now
+            i.fas.fa-play
+          a.watch-btn Create now
+            i.fas.fa-play
+        .text-scroll-arrow
+          p SCROLL DOWN
+          i.fas.fa-long-arrow-alt-down
+  .container.introduction
     .row
-      h3 Create new user
-      form(action="/product/create", method="POST", enctype="multipart/form-data")
-            .form-group
-                lable(for="name") Fimls name
-                input#name.form-control(name="name", type="text",class="my-3")
-                lable(for="genre") Genre
-                input#name.form-control(name="genre", type="text",class="my-3")
-                lable(for="country") Country
-                input#name.form-control(name="country", type="text",class="my-3")
-                lable(for="time") Time
-                input#name.form-control(name="time", type="text",class="my-3")
-                lable(for="cast") Cats
-                input#name.form-control(name="cast", type="text",class="my-3")
-                lable(for="imdb") Imdb
-                input#name.form-control(name="imdb", type="text",class="my-3")
-                lable(for="year") Manufacture Year
-                input#name.form-control(name="year", type="text",class="my-3")
-                lable(for="url") Main image
-                input#url.form-control(name="url", type="file",class="my-3" multiple)
-                input#avatar.form-control(name="description", type="text",class="my-3")
-                button.btn.btn-primary Craete
+      .col-md-6
+        .left-content-intro
+          img(src="../images/e1.jpg", alt="")
+      .col-md-6
+        .right-content-intro
+          .content-on
+            h2 How to create a new fimls
+            .small-cont-1
+              p Imdb sign
+              .wrapper-start
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+                i.fas.fa-star
+            ul
+              li June 07 - july 08
+              li 08:00-12:00 pm
+            p.prs_up_pera_sec Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam vel quis voluptate debitis excepturi ab necessitatibus quasi soluta repellat, esse in? Alias excepturi ullam praesentium explicabo veritatis voluptatem molestiae pariatur?
+            .prs_ec_ue_circle_wrapper
+              .circlediv.d-flex.justify-content-between
+                div
+                  span.days 179
+                  .smalltext Days
+                div
+                  span.hours 30
+                  .smalltext Hours
+                div
+                  span.mins 29
+                  .smalltext Mins
+                div
+                  span.secs 10
+                  .smalltext Secs
+
+  .container-fluidx.register
+    .row
+      .col-md-3.register-left
+        img(src='https://image.ibb.co/n7oTvU/logo_white.png', alt='')
+        h3 Welcome
+        p You are 30 seconds away from earning your own money!
+        input(type='submit', name='', value='Login')
+        br
+      .col-md-9.register-right
+        ul#myTab.nav.nav-tabs.nav-justified(role='tablist')
+          li.nav-item
+            a#home-tab.nav-link.active(data-toggle='tab', href='#home', role='tab', aria-controls='home', aria-selected='true') Employee
+          li.nav-item
+            a#profile-tab.nav-link(data-toggle='tab', href='#profile', role='tab', aria-controls='profile', aria-selected='false') Hirer
+        #myTabContent.tab-content
+          #home.tab-pane.fade.show.active(role='tabpanel', aria-labelledby='home-tab')
+            h3.register-heading Create a new film for...
+            form(action="/product/create", method="POST", enctype="multipart/form-data")
+              .form-wrap.d-flex.flex-row.register-form
+                .left
+                  .form-group
+                    input.form-control(type='text',name='name', placeholder='Film Name *', value='')
+                  .form-group
+                    input.form-control(type='text',name='genre', placeholder='Genre *', value='')
+                  .form-group
+                    input.form-control(type='text',name='country', placeholder='Country *', value='')
+                  .form-group
+                    input.form-control(type='text',name='time', placeholder='Time *', value='')
+                  .form-group
+                    .maxl
+                      .button-wrapper
+                        span.label
+                          | Upload File
+                        input#upload.form-control(name="url", class="custom-file-input", type="file", multiple)
+
+                .right
+                  .form-group
+                    input.form-control(type='text',name='cast', placeholder='Cast *', value='')
+                  .form-group
+                    input.form-control(type='text',name='imdb', placeholder='Imdb *', value='')
+                  .form-group
+                    input.form-control(type='text',name='year', placeholder='Manufacture Year *', value='')
+                  .form-group
+                    input.form-control(type='text',name='description', placeholder='Description for film *', value='')
+                  input.btnRegister(type='submit', value='Create')
+                  

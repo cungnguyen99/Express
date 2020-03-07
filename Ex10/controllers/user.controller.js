@@ -47,12 +47,9 @@ module.exports.get= function(req, res){
 
 module.exports.postCreate=function(req,res){
 
-    req.body.avatar=req.file.path.split(/[\\/]/).slice(1).join('/')
-
     var data=new User({
         name: req.body.name,
         phone: req.body.phone,
-        avatar: req.body.avatar,
         email: req.body.email,
         password: md5(req.body.pass)
     })

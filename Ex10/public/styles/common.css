@@ -4,6 +4,13 @@ html,body{
     height: 100%;
     /* font-family: 'Montserrat', sans-serif; */
 }
+ul{
+    list-style: none;
+    text-decoration: none;
+}
+li{
+    list-style:  none;
+}
 nav {
     z-index: 4 !important;
     position: fixed;

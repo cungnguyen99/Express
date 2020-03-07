@@ -1,0 +1,200 @@
+/* @extend display-flex; */
+display-flex, .display-flex, .display-flex-center, .signup-content, .signin-content, .social-login, .socials {
+    display: flex;
+    display: -webkit-flex; }
+  
+  .sign-in{
+      margin: 150px 0;
+  }
+  img {
+    max-width: 100%;
+    height: auto; }
+  
+  figure {
+    margin: 0; }
+  
+  p {
+    margin-bottom: 0px;
+    font-size: 15px;
+    color: #777; }
+  
+  h2 {
+    line-height: 1.66;
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+    color: #222;
+    font-size: 36px; }
+  
+  .main {
+    background: #f8f8f8;
+    padding: 150px 0; }
+  
+  .clear {
+    clear: both; }
+  
+  body {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #222;
+    background: #f8f8f8;
+    font-weight: 400;
+}
+  
+  .container {
+    width: 900px;
+    background: #fff;
+    margin: 0 auto;
+    box-shadow: 0px 15px 16.83px 0.17px rgba(0, 0, 0, 0.05);
+    border-radius: 20px;}
+
+  
+  .position-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  
+  .signup-form, .signup-image, .signin-form, .signin-image {
+    width: 50%;
+    overflow: hidden; }
+  
+  
+  .form-title {
+    margin-bottom: 33px; }
+
+  
+  figure {
+    margin-bottom: 50px;
+    text-align: center; }
+  
+  .form-submit {
+    display: inline-block;
+    background: #6dabe4;
+    color: #fff;
+    border-bottom: none;
+    width: auto;
+    padding: 15px 39px;
+    border-radius: 5px;
+    margin-top: 25px;
+    cursor: pointer; }
+    .form-submit:hover {
+      background: #4292dc; }
+  
+
+  
+  .register-form {
+    width: 100%; }
+  
+  .form-group {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden; }
+    .form-group:last-child {
+      margin-bottom: 0px; }
+  
+  input {
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #999;
+    padding: 6px 30px;
+    box-sizing: border-box; }
+    input::-webkit-input-placeholder {
+      color: #999; }
+    input:focus {
+      border-bottom: 1px solid #222; }
+      input:focus::-webkit-input-placeholder {
+        color: #222;}
+        input:focus{
+            outline: none; 
+        }
+  
+
+  label {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #222; }
+
+  
+  .signin-content {
+    padding-top: 67px;
+    padding-bottom: 87px; }
+  
+  .socials li {
+    padding: 5px; }
+    .socials li:last-child {
+      margin-right: 0px; }
+    .socials li a {
+      text-decoration: none; }
+      .socials li a i {
+        width: 30px;
+        height: 30px;
+        color: #fff;
+        font-size: 14px;
+        border-radius: 5px;
+        transform: translateZ(0);
+        transition-duration: 0.3s;
+        transition-property: transform;
+        transition-timing-function: ease-out; }
+    .socials li:hover a i {
+      -webkit-transform: scale(1.3) translateZ(0);
+      transform: scale(1.3) translateZ(0); }
+      .form-group i{
+        position: absolute;
+        bottom: 12px;
+        left: 0;
+    }
+  
+  .signin-form {
+    margin-right: 90px;
+    margin-left: 80px; }
+  
+  .signin-image {
+    margin-left: 110px;
+    margin-right: 20px;
+    margin-top: 10px; }
+  
+  @media screen and (max-width: 1200px) {
+    .container {
+      width: calc( 100% - 30px);
+      max-width: 100%; } }
+  @media screen and (min-width: 1024px) {
+    .container {
+      max-width: 1200px; } }
+  @media screen and (max-width: 768px) {
+    .signup-content, .signin-content {
+      flex-direction: column;
+      justify-content: center; }
+  
+    .signup-form {
+      margin-left: 0px;
+      margin-right: 0px;
+      padding-left: 0px;
+      padding: 0 30px; }
+  
+    .signin-image {
+      margin-left: 0px;
+      margin-right: 0px;
+      margin-top: 50px;
+      order: 2; }
+  
+    .signup-form, .signup-image, .signin-form, .signin-image {
+      width: auto; }
+
+  
+    .form-button {
+      text-align: center; }
+  
+    .signin-form {
+      order: 1;
+      margin-right: 0px;
+      margin-left: 0px;
+      padding: 0 30px; }
+  
+    .form-title {
+      text-align: center; } }
+  
+  

@@ -85,6 +85,15 @@ header .wrap-a{
     transform: translate(58.5%,1300%);
 }
 /* introduction */
+.introduction{
+    background-image: linear-gradient(to top,#D6EAF8,#EBF5FB, #fff);
+    padding: 7% 0;
+}
+.introduction .box-shadow{
+    box-shadow:0px 1px 20px 0px rgba(0, 0, 0, 0.10);  
+    background-color: white;
+
+}
 span.days{
     background-color: #43b9f6;
 }
@@ -99,10 +108,11 @@ span.secs{
 }
 .circlediv{
     text-align: center;
+    width: 80%;
 }
 .circlediv div > span {
-    font-weight: 600;
-    font-size: 190%;
+    font-weight: 400;
+    font-size: 210%;
     color: white;
     padding: 0px;
     display: inline-block;
@@ -111,6 +121,38 @@ span.secs{
     line-height: 75px;
     position: relative;
     border-radius: 50%;
+}
+.content-on>ul{
+    position: relative;
+    top: 0;
+    left: 0;
+}
+.content-on>ul::after{
+    content: '';
+    width: 100%;
+    border: 1px solid #eeeeee;
+    height: 1px;
+    position: absolute;
+    top: -12px;
+    left: 0;
+}
+.small-cont-1 .wrapper-start i{
+    color: #fcad26;
+}
+.content-on .prs_up_pera_sec{
+    margin: 5% 0;
+}
+.right-content-intro{
+    padding-left: 4%;
+}
+.content-on{
+    padding: 5% 0;
+}
+.prs_ec_ue_circle_wrapper{
+    margin-top: 10%;
+}
+.small-cont-1{
+    margin: 2% 0;
 }
 /* register */
 .register{

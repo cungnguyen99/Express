@@ -1,14 +1,41 @@
-extends ../layout/common 
-block content
-    .container
-        h1 Login
-        if error
-            each e in error
-                .alert.alert-danger=e
-        form(action="/auth/login", method="POST")
-            .form-group
-                lable(for="name") Email
-                input#name.form-control(name="emailLogin", type="text",class="my-3", value=values?values.email:"")
-                lable(for="url") Pass word
-                input#url.form-control(name="passLogin", type="passWord",class="my-3", value=values?values.pass:"")
-                button.btn.btn-primary Craete
+html
+    head
+        meta(charset='utf-8')
+        meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css', integrity='sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T', crossorigin='anonymous')
+        link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.8.1/css/all.css', integrity='sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf', crossorigin='anonymous')
+        link(rel='stylesheet', type='text/css', href='../styles/auth/login.css')
+
+    body
+        section.sign-in
+            .container
+                .signin-content
+                    .signin-image
+                        figure
+                            img(src='../images/signin-image.jpg', alt='sing up image')
+                        a.signup-image-link(href='#') Create an account
+                    .signin-form
+                        h2.form-title Sign up
+                        form#login-form.register-form(method='POST')
+                            .form-group
+                                label(for='your_name')
+                                i.fas.fa-user
+                                input#your_name(type='text', name='your_name', placeholder='Your Name')
+                            .form-group
+                                label(for='your_pass')
+                                i.fas.fa-unlock-alt
+                                input#your_pass(type='password', name='your_pass', placeholder='Password')
+                            .form-group.form-button
+                                input#signin.form-submit(type='submit', name='signin', value='Log in')
+        .container
+            h1 Login
+            if error
+                each e in error
+                    .alert.alert-danger=e
+            form(action="/auth/login", method="POST")
+                .form-group
+                    lable(for="name") Email
+                    input#name.form-control(name="emailLogin", type="text",class="my-3", value=values?values.email:"")
+                    lable(for="url") Pass word
+                    input#url.form-control(name="passLogin", type="passWord",class="my-3", value=values?values.pass:"")
+                    button.btn.btn-primary Craete

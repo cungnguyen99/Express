@@ -142,6 +142,9 @@ header .container-fluid>h3{
 	font-family: 'Montserrat', sans-serif;
 	overflow-x: hidden;
 	padding-bottom: 6%;
+	position: relative;
+	top: 0;
+	left: 0;
   }
   .container.shoe {
 	position: relative;
@@ -347,4 +350,24 @@ header .container-fluid>h3{
 }
 .productImage:hover .icon_heart{
 	transform: scaleX(1.5);
+}
+/* pagination */
+#pagination{
+	margin-left: 60%;
+	transform: translateX(-55%);
+}
+#pagination li.page-item a{
+	border-radius: 55%;
+	margin-left: 12px;
+	border: 1.5px solid #265077;
+	color: #265077;
+	font-weight: 700;
+}
+#pagination li.page-item:last-child a,
+#pagination li.page-item:first-child a{
+	border-radius: 20px;
+	padding-left: 15px;
+	padding-right: 15px;
+	font-size: 100%;
+	font-weight: 700;
 }

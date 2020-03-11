@@ -55,7 +55,7 @@ module.exports.index = function (req, res) {
 
     var page = parseInt(req.query.page) || 1
 
-    var perPage = 8;
+    var perPage = 9;
 
     var start = (page - 1) * perPage
 
@@ -63,7 +63,7 @@ module.exports.index = function (req, res) {
 
     var pageArr = ([page, page + 1, page + 2]) || [1, 2, 3]
 
-    Product.find().then(function (products) {
+    Product.find().limit(end).skip(start).then(function (products) {
 
         res.render('product/index.pug', {
 

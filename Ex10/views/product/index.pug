@@ -65,31 +65,23 @@ block content
                       .btn-view
                         a.btn.btn-send(href='/product/'+val.id) View data
                           i.fas.fa-arrow-right
+      #pagination
+        .nav-pagination
+          ul.pagination
+            li.page-item
+              a.page-link(href='/product?page='+(page-1), id="pre" aria-label='Previous')
+                  span(aria-hidden='true') PREV
+                  span.sr-only Previous
+            if products
+              each val in products
+                li.page-item
+                  a.page-link(href='/product?page='+val)=val
+              li.page-item
+                a.page-link(href='/product?page='+(page+1), aria-label='Next')
+                    span(aria-hidden='true') NEXT
+                    span.sr-only Next
 
-//-extends ../layout/common 
-//- block content
-      .row
-        if films
-          each val, index in films
-            .col.my-3
-              .card(style='width: 18rem;  height=50rem; box-sizing: border-box;')
-                img.card-img-top(src=val.image[0], alt='Card image cap')
-                .card-body
-                  h5.card-title=val.name
-                  p.card-file=val.description
-                  a.btn.btn-primary(href='/cart/add/'+val.id) Add Cart
-                  a.btn.btn-primary(href='/product/'+val.id) View
-      .container
-        section#grid.grid.clearfix
-          a(href='#', data-path-hover='M 0,0 0,38 90,58 180.5,38 180,0 z')
-            figure
-              img(src='img/1.png')
-              svg(viewbox='0 0 180 320', preserveaspectratio='none')
-                path(d='M 0 0 L 0 182 L 90 126.5 L 180 182 L 180 0 L 0 0 z ')
-              figcaption
-                h2 Crystalline
-                p Soko radicchio bunya nuts gram dulse.
-                button View
+
 
 
 

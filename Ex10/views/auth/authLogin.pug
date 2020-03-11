@@ -13,18 +13,21 @@ html
                     .signin-image
                         figure
                             img(src='../images/signin-image.jpg', alt='sing up image')
-                        a.signup-image-link(href='#') Create an account
+                        a.signup-image-link(href='/users/create') Create an account
                     .signin-form
                         h2.form-title Sign up
-                        form#login-form.register-form(method='POST')
+                        if error
+                            each e in error
+                                .alert.alert-danger=e
+                        form#login-form.register-form(action="/auth/login",method='POST')
                             .form-group
                                 label(for='your_name')
                                 i.fas.fa-user
-                                input#your_name(type='text', name='your_name', placeholder='Your Name')
+                                input#your_name(type='text', name='emailLogin',value=values?values.email:"", placeholder='Your Email')
                             .form-group
                                 label(for='your_pass')
                                 i.fas.fa-unlock-alt
-                                input#your_pass(type='password', name='your_pass', placeholder='Password')
+                                input#your_pass(type='password', name='passLogin',value=values?values.pass:"", placeholder='Password')
                             .form-group.form-button
                                 input#signin.form-submit(type='submit', name='signin', value='Log in')
         .container

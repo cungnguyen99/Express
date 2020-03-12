@@ -380,28 +380,32 @@ ul.wrapper_li li.active .motslide .content_header_col_1 .button_custom{
 }
 
 .owl-carousel .info_fiml{
+    font-family: 'Montserrat', sans-serif; 
     position: absolute;
-    bottom: 0;
-    left: 0;
-    padding: 21% 13%;
+    bottom: 10%;
+    left: 10%;
     text-transform: capitalize;
-
 }
 .owl-carousel h3{
-    margin-bottom: 10%;
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 23px;
+    font-weight: 600;
     transition: all .5s;
+}
+.owl-carousel span{
+    font-size: 14px;
+    font-weight: 900;
 }
 .owl-carousel i{
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 600;
-    margin-right: 3%;
+    margin-right: 8px;
     transition: all .5s;
 }
-.owl-carousel.owl-theme h6{
-    display: inline-block;
-    margin-right: 3%;
+.owl-carousel.owl-theme img{
+    width: 95%;
+    height: auto;
+    border-radius: 5px;
+    filter: brightness(80%);
 }
 .owl-carousel .nav-btn{
     height: 47px;

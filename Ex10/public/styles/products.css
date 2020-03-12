@@ -355,6 +355,7 @@ header .container-fluid>h3{
 #pagination{
 	margin-left: 60%;
 	transform: translateX(-55%);
+	padding-bottom: 4%;
 }
 #pagination li.page-item a{
 	border-radius: 55%;

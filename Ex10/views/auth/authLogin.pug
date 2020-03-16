@@ -30,15 +30,15 @@ html
                                 input#your_pass(type='password', name='passLogin',value=values?values.pass:"", placeholder='Password')
                             .form-group.form-button
                                 input#signin.form-submit(type='submit', name='signin', value='Log in')
-        .container
-            h1 Login
-            if error
-                each e in error
-                    .alert.alert-danger=e
-            form(action="/auth/login", method="POST")
-                .form-group
-                    lable(for="name") Email
-                    input#name.form-control(name="emailLogin", type="text",class="my-3", value=values?values.email:"")
-                    lable(for="url") Pass word
-                    input#url.form-control(name="passLogin", type="passWord",class="my-3", value=values?values.pass:"")
-                    button.btn.btn-primary Craete
+        //- .container
+        //-     h1 Login
+        //-     if error
+        //-         each e in error
+        //-             .alert.alert-danger=e
+        //-     form(action="/auth/login", method="POST")
+        //-         .form-group
+        //-             lable(for="name") Email
+        //-             input#name.form-control(name="emailLogin", type="text",class="my-3", value=values?values.email:"")
+        //-             lable(for="url") Pass word
+        //-             input#url.form-control(name="passLogin", type="passWord",class="my-3", value=values?values.pass:"")
+        //-             button.btn.btn-primary Craete

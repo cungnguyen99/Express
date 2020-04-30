@@ -9,6 +9,10 @@
 	overflow-x: hidden;
 	background-color: #f1f8f7;
   }
+  a{
+	  text-decoration: none !important;
+	  list-style: none;
+  }
   /* header */
   .header{
 	background-image:linear-gradient(225deg,rgba(21,21,21,0.4) 36.97%,rgba(21,21,21,0.26) 100%),
@@ -70,7 +74,7 @@ header .container-fluid>h3{
 	background-color: rgba(0, 0, 0, 0.5);
 	width: 25%;
 	padding: 2.5% 0;
-	transform: translate(125%,80%);
+	transform: translate(128%,80%);
 }
 .frame h3{
 	text-align: center;
@@ -84,6 +88,22 @@ header .container-fluid>h3{
 	color: white;
 	font-weight: 400;
 	font-size: 90%;
+}
+a.btn_create{
+	background-color: rgba(0, 0, 0, 0.6 );
+	padding: 0.7% 3%;
+	color: white !important;
+	border-radius: 20px;
+	font-weight: 500;
+	letter-spacing: 0.6px;
+	cursor: pointer;
+	transition: all .3s;
+	margin-left: 31.5%;
+	position: absolute;
+	bottom: 15%;
+}
+a.btn_create:hover {
+    background-color: #ffe142;
 }
 .text-scroll-arrow{
 	position: absolute;

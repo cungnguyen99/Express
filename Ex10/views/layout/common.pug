@@ -18,19 +18,19 @@ html
                 .burger__patty
             ul.nav__list.nav__list--hidden
                 li.nav__item
-                    a.nav__link(href='/', style='color: #5fc7ea;')
+                    a.nav__link(href='/', title="home" style='color: #5fc7ea;')
                         i.fa.fa-camera-retro
                 li.nav__item
-                    a.nav__link.scrolly(href='/users/create', style='color: #e6d068;')
+                    a.nav__link.scrolly(href='/product',title="product", style='color: #e6d068;')
                         i.fa.fa-bolt
                 li.nav__item
-                    a.nav__link(href='/users/5e1845c863b68430d86a3afc', style='color: #e68568;')
+                    a.nav__link(href='/product/create',title="create product" style='color: #e68568;')
                         i.fa.fa-music
                 li.nav__item
-                    a.nav__link(href='/product', style='color: #68e6ac;')
+                    a.nav__link(href='/auth/login',title="sign in" style='color: #68e6ac;')
                         i.fa.fa-paper-plane
                 li.nav__item
-                    a.nav__link(href='/product', style='color: #636e75;')
+                    a.nav__link(href='/users/create', title="create account " style='color: #636e75;')
                         i.fas.fa-guitar
             if user 
                 p=user.name

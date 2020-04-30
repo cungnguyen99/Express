@@ -4,6 +4,8 @@ var multer  = require('multer')
 
 var router = express.Router(); 
 
+var middleware=require('../middleware/auth.middleware')
+
 var storage = multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, './public/uploads/')
@@ -19,7 +21,7 @@ var controller=require('../controllers/product.controller');
 
 router.get('/', controller.index)
 
-router.get('/create', controller.create)
+router.get('/create',middleware.requireAuth, controller.create)
 
 //phải cho cái search trên cái view mới chạy được. không hiểu sao
 router.get('/search', controller.search)

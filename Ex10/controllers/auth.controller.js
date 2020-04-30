@@ -18,6 +18,7 @@ module.exports.postLogin = function (req, res) {
     var pass = req.body.passLogin;
 
     User.findOne({ email: email }, (err, user) => {
+        console.log(user)
 
         if (!user) {
 
@@ -57,5 +58,5 @@ module.exports.postLogin = function (req, res) {
     });
 
 
-    res.redirect('/users')
+    res.redirect('/product')
 }

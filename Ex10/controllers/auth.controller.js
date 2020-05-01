@@ -18,7 +18,6 @@ module.exports.postLogin = function (req, res) {
     var pass = req.body.passLogin;
 
     User.findOne({ email: email }, (err, user) => {
-        console.log(user)
 
         if (!user) {
 
@@ -33,7 +32,8 @@ module.exports.postLogin = function (req, res) {
             return;
 
         }
-        if (md5(user.password) !== md5(pass)) {
+
+        if (user.password!== md5(pass)) {
 
             res.render('auth/authLogin', {
 
@@ -55,8 +55,8 @@ module.exports.postLogin = function (req, res) {
 
         })
         
+        res.redirect('/product/create')
+
     });
 
-
-    res.redirect('/product')
 }

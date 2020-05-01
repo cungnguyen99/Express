@@ -13,19 +13,38 @@ module.exports.requireAuth=function(req, res, next){
 
     }
 
-    var user=User.find({id: req.signedCookies.idUser});    
-
-    //kiem tra tiep neu co userId tren cookie roi nhung k co id do trong database thi cung bat login lai
-    if(!user){
-
-        res.redirect('/auth/login')
-
-        return;
-
-    }
     
-    res.locals.user=user
+    User.findOne({ id: req.signedCookies.idUser }, (err, user) => {
+
+        if (!user) {
+
+            res.redirect('/auth/login')
+
+            return;
+
+        }
+
+        console.log(user)
+
+        res.locals.user=user
+
+        next();
+
+    })
+    // var user=User.find({id: req.signedCookies.idUser});    
+
+    // //kiem tra tiep neu co userId tren cookie roi nhung k co id do trong database thi cung bat login lai
+    // if(!user){
+
+    //     res.redirect('/auth/login')
+
+    //     return;
+
+    // }
+    
+    // res.locals.user=user
 
     //neu co user roi thi thuc hien middleware tiep theo
-    next();
+
+    //next()
 }

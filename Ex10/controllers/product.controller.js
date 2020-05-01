@@ -23,7 +23,7 @@ module.exports.postCreate = function (req, res) {
 
 module.exports.create = function (rep, res) {
 
-    res.render('product/create.pug');
+    res.render('product/create');
 
 }
 

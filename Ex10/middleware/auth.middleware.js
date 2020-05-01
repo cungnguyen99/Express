@@ -12,8 +12,7 @@ module.exports.requireAuth=function(req, res, next){
         return;
 
     }
-
-    
+  
     User.findOne({ id: req.signedCookies.idUser }, (err, user) => {
 
         if (!user) {
@@ -46,5 +45,5 @@ module.exports.requireAuth=function(req, res, next){
 
     //neu co user roi thi thuc hien middleware tiep theo
 
-    //next()
+    // next()
 }

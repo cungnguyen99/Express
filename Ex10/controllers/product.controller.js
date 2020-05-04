@@ -21,7 +21,7 @@ module.exports.postCreate = function (req, res) {
     res.redirect('/product');
 }
 
-module.exports.create = function (rep, res) {
+module.exports.create = function (req, res) {
 
     res.render('product/create');
 
@@ -32,6 +32,7 @@ module.exports.get = function (req, res) {
     var idSearch = req.params.productId;
 
     Product.findById(idSearch, function (err, data) {
+        if (err) return;
         res.render('product/view', {
             productInfo: data
         });
@@ -43,7 +44,7 @@ module.exports.search = function (req, res) {
     var val = req.query.name;
 
     Product.find({ name: new RegExp('^' + val + '$', "i") }, function (err, doc) {
-
+        if (err) return;
         res.render('product/index.pug', {
 
             films: doc

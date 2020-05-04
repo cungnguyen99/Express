@@ -10,53 +10,60 @@ module.exports.login = function (req, res) {
 
 }
 
-module.exports.postLogin = function (req, res) {
+module.exports.postLogin = async function (req, res) {
 
-    //req.body.Ten-gi-do thi Ten-gi-do phai trung voi ten cua thuoc tinh name trong input
-    var email = req.body.emailLogin;
+    try {
 
-    var pass = req.body.passLogin;
+        //req.body.Ten-gi-do thi Ten-gi-do phai trung voi ten cua thuoc tinh name trong input
+        var email= req.body.emailLogin
 
-    User.findOne({ email: email }, (err, user) => {
+        var pass=req.body.passLogin
 
-        if (!user) {
+        const user = await User.findOne({email})
 
-            res.render('auth/authLogin', {
+        // User.findOne({ email: emailLogin }, (err, user) => {
 
-                error: ['User dose not exists.'],
+            if (!user) {
 
-                values: req.body
+                res.render('auth/authLogin', {
+
+                    error: ['User dose not exists.'],
+
+                    values: req.body
+
+                })
+
+                return;
+
+            }
+
+            if (user.password !== md5(pass)) {
+
+                res.render('auth/authLogin', {
+
+                    error: ['Wrong password.'],
+
+                    values: req.body
+
+                })
+
+                return;
+
+            }
+
+            //Khi nhan login se tao ra 1 cookie voi id la idUser, iduser nay dung trong file auth.middleware 
+            //de ktra xem co cookie hay chua. neu co roi thi cookie se co o tren trang web luon va dung duoc luon de ktra
+            res.cookie('idUser', user.id, {
+
+                signed: true
 
             })
 
-            return;
+            res.redirect('/product/create')
 
-        }
-
-        if (user.password!== md5(pass)) {
-
-            res.render('auth/authLogin', {
-
-                error: ['Wrong password.'],
-
-                values: req.body
-
-            })
-
-            return;
-
-        }
-
-        //Khi nhan login se tao ra 1 cookie voi id la idUser, iduser nay dung trong file auth.middleware 
-        //de ktra xem co cookie hay chua. neu co roi thi cookie se co o tren trang web luon va dung duoc luon de ktra
-        res.cookie('idUser', user.id, {
-
-            signed: true
-
-        })
-        
-        res.redirect('/product/create')
-
-    });
+        // });
+    } catch (error) {
+        console.log(error)
+    }
 
 }

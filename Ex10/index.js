@@ -1,17 +1,17 @@
 require('dotenv').config();
-console.log(process.env.MyDarling)
-const express = require('express')
-const bodyParser = require('body-parser')
-const cookieParser = require('cookie-parser')
+console.log(process.env.MyDarling);
+const express = require('express');
+const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 //khai bao csrf de su dung token cho chuyen tien bai 23
-var csurf = require('csurf')
+var csurf = require('csurf');
 
 //khai bao va mo mot cong ket noi den database ma ta muon lam viec
 var mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URL)
+mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true,useUnifiedTopology: true } )
 
 const app = express()
-const port = 3000
+const port = 3000;
 var userRoute = require('./routes/users.route')
 var authRoute = require('./routes/auth.route')
 var transferRoute = require('./routes/transfer.route')
@@ -38,7 +38,7 @@ app.use(sessionMiddleware)
 //su dung csrf
 // app.use(csurf({ cookie: true }))
 
-app.use(express.static('public'))
+app.use(express.static('public'));
 
 app.get('/', async(req, res) =>{
     const films=await Product.find({ genre: 'Action' });
